@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# Fichier de Mac qui va faire chier pas mal de Windowsien
+.DS_Store
+
+# Fichier workspace d'Eclipse
+.metadata
+.cproject
+.project
