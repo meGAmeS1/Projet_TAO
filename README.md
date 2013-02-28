@@ -8,4 +8,5 @@ Maginot Quentin
 Florentin Le Moal
 Thibaut Revilliod
 
-COUCOU TU VEUX VOIR MON TP^^
+Projet consistant à développer une application simulant le jeu de la vie.
+
