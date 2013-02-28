@@ -23,8 +23,10 @@ public:
 	void setAbs(int abs);
 	int getOrd() const;
 	void setOrd(int ord);
+	bool operator < (const Position &) const;
 };
 
 ostream& operator << (ostream &, const Position&);
+
 
 #endif /* POSITION_H_ */

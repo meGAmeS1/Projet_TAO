@@ -16,10 +16,13 @@ Position::Position(int _a, int _o):abs(_a),ord(_o){}
 
 ostream& operator << (ostream & Out, const Position& Cpl)
 {
-
 Out<< "("<<Cpl.getAbs()<<";"<<Cpl.getOrd()<<")";
-
 return Out;
+}
+
+bool Position:: operator < (const Position & p) const
+{
+ return ((abs< p.abs) || ((abs==p.abs) && (ord<p.ord)));
 }
 
 int Position::getAbs() const {

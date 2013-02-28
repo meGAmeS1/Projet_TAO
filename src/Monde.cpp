@@ -15,7 +15,7 @@ Monde::Monde() {
 	Position pos (1,3);
 	Element * elt = new Element(pos, "Toto");
 	push_back(elt); //pas d'objet car le monde est un vecteur
-	carte.insert(pair <Position, unsigned> (pos, size()-1 ) );
+	carte.insert(pair <Position, unsigned> (pos, 1 ) );
 
 }
 
@@ -23,7 +23,7 @@ Monde::~Monde() {
 	// TODO Auto-generated destructor stub
 }
 
-void Monde::afficher()const
+void Monde::afficher()
 {
 cout<<"Vector : "<<endl;
 for (unsigned i=0 ; i< size() ; i++)

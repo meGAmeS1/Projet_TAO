@@ -13,7 +13,11 @@ using namespace std;
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	Monde unM = new Monde();
-	unM.afficher();
+	Position position(1,2);
+	cout<<position<<endl;
+
+	Monde monde;
+	monde.afficher();
+
 	return 0;
 }

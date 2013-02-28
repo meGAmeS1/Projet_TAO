@@ -20,7 +20,7 @@ class Monde : public vector<Element*>{
 public:
 	Monde();
 	virtual ~Monde();
-	void afficher()const;
+	void afficher();
 	const map<Position, unsigned>& getCarte() const;
 	void setCarte(const map<Position, unsigned>& carte);
 
