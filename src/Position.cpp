@@ -12,6 +12,32 @@ Position::Position() {
 
 }
 
+Position::Position(int _a, int _o):abs(_a),ord(_o){}
+
+ostream& operator << (ostream & Out, const Position& Cpl)
+{
+
+Out<< "("<<Cpl.getAbs()<<";"<<Cpl.getOrd()<<")";
+
+return Out;
+}
+
+int Position::getAbs() const {
+	return abs;
+}
+
+void Position::setAbs(int abs) {
+	this->abs = abs;
+}
+
+int Position::getOrd() const {
+	return ord;
+}
+
+void Position::setOrd(int ord) {
+	this->ord = ord;
+}
+
 Position::~Position() {
 	// TODO Auto-generated destructor stub
 }

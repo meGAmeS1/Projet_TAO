@@ -8,10 +8,14 @@
 #include "Element.h"
 #include "Position.h"
 
+using namespace std;
+
 Element::Element() {
 	// TODO Auto-generated constructor stub
 
 }
+
+Element::Element(const Position _p, const string _n):pos(_p),name(_n) {}
 
 const Position& Element::getPos() const {
 	return pos;
@@ -19,6 +23,10 @@ const Position& Element::getPos() const {
 
 void Element::setPos(const Position& pos) {
 	this->pos = pos;
+}
+
+void Element::afficher(){
+cout<<"Coucou";
 }
 
 Element::~Element() {
