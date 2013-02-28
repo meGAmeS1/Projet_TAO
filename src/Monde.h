@@ -27,5 +27,6 @@ public:
 private:
 	map <Position, unsigned> carte;
 };
+//commentaire pour Florentin
 
 #endif /* MONDE_H_ */
