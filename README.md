@@ -9,3 +9,4 @@ Florentin Le Moal
 Thibaut Revilliod
 
 Projet consistant à développer une application simulant le jeu de la vie.
+
