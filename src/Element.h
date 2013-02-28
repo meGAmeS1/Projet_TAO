@@ -10,6 +10,8 @@
 #ifndef ELEMENT_H_
 #define ELEMENT_H_
 
+#include "Position.h"
+
 class Element {
 private:
 	Position pos;
