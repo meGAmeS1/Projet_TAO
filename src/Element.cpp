@@ -26,7 +26,7 @@ void Element::setPos(const Position& pos) {
 }
 
 void Element::afficher(){
-cout<<"Coucou";
+cout<<name<<" "<<pos<<endl;
 }
 
 Element::~Element() {

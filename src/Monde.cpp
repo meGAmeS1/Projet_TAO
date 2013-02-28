@@ -12,10 +12,6 @@
 using namespace std;
 
 Monde::Monde() {
-	Position pos (1,3);
-	Element * elt = new Element(pos, "Toto");
-	push_back(elt); //pas d'objet car le monde est un vecteur
-	carte.insert(pair <Position, unsigned> (pos, 1 ) );
 
 }
 
@@ -38,6 +34,12 @@ const map<Position, unsigned>& Monde::getCarte() const {
 	return carte;
 }
 
+map<Position, unsigned>& Monde::getCarteEdit() {
+	return carte;
+}
+
 void Monde::setCarte(const map<Position, unsigned>& carte) {
 	this->carte = carte;
 }
+
+
