@@ -19,6 +19,7 @@ class Element {
 private:
 	Position pos;
 	string name;
+	int vitesse;
 public:
 	Element();
 	Element(const Position, const string);
@@ -26,6 +27,8 @@ public:
 	const Position& getPos() const;
 	void setPos(const Position& pos);
 	void afficher();
+	const string& getName() const;
+	void setName(const string& name);
 };
 
 #endif /* ELEMENT_H_ */
