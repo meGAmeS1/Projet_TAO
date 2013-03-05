@@ -22,6 +22,7 @@ public:
 	virtual ~Monde();
 	void afficher();
 	const map<Position, unsigned>& getCarte() const;
+	map<Position, unsigned>& getCarteEdit();
 	void setCarte(const map<Position, unsigned>& carte);
 
 private:

@@ -17,6 +17,22 @@ int main() {
 	cout<<position<<endl;
 
 	Monde monde;
+
+	Position pos1 (1,3);
+	Element * elt1 = new Element(pos1, "Toto");
+	monde.push_back(elt1);
+	monde.getCarteEdit().insert(pair <Position, unsigned> (pos1, 1 ) );
+
+	Position pos2 (2,4);
+	Element * elt2 = new Element(pos2, "Tata");
+	monde.push_back(elt2);
+	monde.getCarteEdit().insert(pair <Position, unsigned> (pos2, 2 ) );
+
+	Position pos3 (1,9);
+	Element * elt3 = new Element(pos3, "Titi");
+	monde.push_back(elt3);
+	monde.getCarteEdit().insert(pair <Position, unsigned> (pos3, 3 ) );
+
 	monde.afficher();
 
 	return 0;
