@@ -11,6 +11,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -23,20 +24,15 @@ int main() {
 
 	Monde monde;
 
-	Position pos1 = monde.creerPos();
-	Element * elt1 = new Element(pos1, "Toto");
-	monde.push_back(elt1);
-	monde.getCarteEdit().insert(pair <Position, unsigned> (pos1, 1 ) );
+	int var;
 
-	Position pos2 = monde.creerPos();
-	Element * elt2 = new Element(pos2, "Tata");
-	monde.push_back(elt2);
-	monde.getCarteEdit().insert(pair <Position, unsigned> (pos2, 2 ) );
-
-	Position pos3 = monde.creerPos();
-	Element * elt3 = new Element(pos3, "Titi");
-	monde.push_back(elt3);
-	monde.getCarteEdit().insert(pair <Position, unsigned> (pos3, 3 ) );
+	for (var = 0; var < 10; var++) {
+		Position pos = monde.creerPos();
+		string nom = "Element";
+		Element * elt1 = new Element(pos, nom);
+		monde.push_back(elt1);
+		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var ) );
+	}
 
 	monde.afficher();
 

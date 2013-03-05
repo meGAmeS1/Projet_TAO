@@ -45,23 +45,37 @@ void Monde::setCarte(const map<Position, unsigned>& carte) {
 	this->carte = carte;
 }
 
+bool Monde::existPos(Position pos) {
+	bool result = false;
+
+	// MŽthode qui recherche la position
+	return result;
+}
+
 Position Monde::creerPos()
 {
 	int posX, posY;
+	Position pos;
+	bool isOk = false;
 
-	posX = rand() % 16 + 1;
-	posY = rand() % 16 + 1;
+	while (isOk == false)
+	{
+		posX = rand() % 16 + 1;
+		posY = rand() % 16 + 1;
 
-	if ((posX + posY) % 2 == 1) {
-		if (posY < 16) {
-			posY++;
+		if ((posX + posY) % 2 == 1) {
+			if (posY < 16) {
+				posY++;
+			}
+			else {
+				posY--;
+			}
 		}
-		else {
-			posY--;
-		}
+
+		pos = Position (posX,posY);
+
+		if (! existPos(pos)) isOk = true;
 	}
-
-	Position pos (posX,posY);
 
 	return pos;
 }

@@ -25,6 +25,7 @@ public:
 	map<Position, unsigned>& getCarteEdit();
 	void setCarte(const map<Position, unsigned>& carte);
 	Position creerPos();
+	bool existPos(Position);
 
 private:
 	map <Position, unsigned> carte;
