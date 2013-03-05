@@ -51,8 +51,8 @@ Position Monde::creerPos()
 
 	srand (time(NULL));
 
-	posX = rand() * 16 + 1;
-	posY = rand() * 16 + 1;
+	posX = rand() % 16 + 1;
+	posY = rand() % 16 + 1;
 
 	if ((posX + posY) % 2 == 1) {
 		if (posY < 16) {
