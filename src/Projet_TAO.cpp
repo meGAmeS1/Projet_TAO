@@ -8,11 +8,14 @@
 
 #include "Monde.h"
 #include "Element.h"
+#include <stdlib.h>     /* srand, rand */
 #include <iostream>
 
 using namespace std;
 
 int main() {
+	srand (time(NULL));
+
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	Position position(1,2);
 	cout<<position<<endl;

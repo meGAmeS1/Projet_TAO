@@ -49,8 +49,6 @@ Position Monde::creerPos()
 {
 	int posX, posY;
 
-	srand (time(NULL));
-
 	posX = rand() % 16 + 1;
 	posY = rand() % 16 + 1;
 
