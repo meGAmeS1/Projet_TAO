@@ -14,7 +14,7 @@ using namespace std;
 #include <vector>
 #include <map>
 #include "Element.h"
-
+#include "Position.h"
 
 class Monde : public vector<Element*>{
 public:
@@ -24,10 +24,10 @@ public:
 	const map<Position, unsigned>& getCarte() const;
 	map<Position, unsigned>& getCarteEdit();
 	void setCarte(const map<Position, unsigned>& carte);
+	Position creerPos();
 
 private:
 	map <Position, unsigned> carte;
 };
-//commentaire pour Florentin
 
 #endif /* MONDE_H_ */

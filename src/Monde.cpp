@@ -8,6 +8,9 @@
 #include "Monde.h"
 #include "Element.h"
 #include "Position.h"
+#include "constants.h"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 using namespace std;
 
@@ -42,4 +45,25 @@ void Monde::setCarte(const map<Position, unsigned>& carte) {
 	this->carte = carte;
 }
 
+Position Monde::creerPos()
+{
+	int posX, posY;
 
+	srand (time(NULL));
+
+	posX = rand() * 16 + 1;
+	posY = rand() * 16 + 1;
+
+	if ((posX + posY) % 2 == 1) {
+		if (posY < 16) {
+			posY++;
+		}
+		else {
+			posY--;
+		}
+	}
+
+	Position pos (posX,posY);
+
+	return pos;
+}

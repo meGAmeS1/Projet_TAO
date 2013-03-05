@@ -12,8 +12,8 @@
 #define nbFemme 10;
 #define nbDonuts 5;
 #define nbCochon 5;
-#define largM 16;
-#define longM 16;
+#define largM 16; // Largeur - abscisse
+#define longM 16; // Hauteur - ordonnées
 
 
 #endif /* CONSTANTS_H_ */
