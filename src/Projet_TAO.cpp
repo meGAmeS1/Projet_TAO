@@ -9,6 +9,7 @@
 #include "Monde.h"
 #include "Element.h"
 #include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 #include <iostream>
 
 using namespace std;
