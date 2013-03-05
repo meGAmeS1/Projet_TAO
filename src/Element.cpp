@@ -25,6 +25,14 @@ void Element::setPos(const Position& pos) {
 	this->pos = pos;
 }
 
+const string& Element::getName() const {
+	return name;
+}
+
+void Element::setName(const string& name) {
+	this->name = name;
+}
+
 void Element::afficher(){
 cout<<name<<" "<<pos<<endl;
 }
