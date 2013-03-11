@@ -8,10 +8,10 @@
 #ifndef HOMME_H_
 #define HOMME_H_
 
-#include "Mobile.h"
+#include "Humain.h"
 using namespace std;
 
-class Homme: public Mobile {
+class Homme: public Humain {
 public:
 	Homme();
 	virtual ~Homme();

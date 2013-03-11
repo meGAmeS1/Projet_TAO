@@ -9,9 +9,9 @@
 #define FEMME_H_
 using namespace std;
 
-#include "Mobile.h"
+#include "Humain.h"
 
-class Femme: public Mobile {
+class Femme: public Humain {
 public:
 	Femme();
 	virtual ~Femme();

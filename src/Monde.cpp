@@ -48,7 +48,7 @@ void Monde::setCarte(const map<Position, unsigned>& carte) {
 bool Monde::existPos(Position pos) {
 	bool result = false;
 
-	// MŽthode qui recherche la position
+	// Méthode qui recherche la position
 	return result;
 }
 

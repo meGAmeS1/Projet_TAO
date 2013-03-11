@@ -19,7 +19,6 @@ class Element {
 private:
 	Position pos;
 	string name;
-	int vitesse;
 public:
 	Element();
 	Element(const Position, const string);

@@ -8,10 +8,10 @@
 #ifndef ENFANT_H_
 #define ENFANT_H_
 
-#include "Mobile.h"
+#include "Humain.h"
 using namespace std;
 
-class Enfant: public Mobile {
+class Enfant: public Humain {
 public:
 	Enfant();
 	virtual ~Enfant();

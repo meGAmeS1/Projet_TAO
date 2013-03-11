@@ -13,6 +13,15 @@ Mobile::Mobile() {
 
 }
 
+int Mobile::getVision() const {
+	return vision;
+}
+
+void Mobile::setVision(int vision) {
+	this->vision = vision;
+}
+
+
 Mobile::~Mobile() {
 	// TODO Auto-generated destructor stub
 }
