@@ -9,11 +9,13 @@
 #define HOMME_H_
 
 #include "Humain.h"
+#include <string>
 using namespace std;
 
 class Homme: public Humain {
 public:
 	Homme();
+	Homme(const Position, const string, int, int, int, int);
 	virtual ~Homme();
 };
 
