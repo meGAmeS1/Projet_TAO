@@ -9,12 +9,14 @@
 #define DONUT_H_
 
 #include "Ressource.h"
+#include <string>
 
 using namespace std;
 
 class Donut: public Ressource {
 public:
 	Donut();
+	Donut(const Position, const string, int, int);
 	virtual ~Donut();
 };
 

@@ -9,6 +9,7 @@
 #define RESSOURCE_H_
 
 #include "Element.h"
+#include <string>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private:
 	int pointDeVie;
 public:
 	Ressource();
+	Ressource(const Position, const string, int, int);
 	virtual ~Ressource();
 	int getPointDeVie() const;
 	void setPointDeVie(int pointDeVie);

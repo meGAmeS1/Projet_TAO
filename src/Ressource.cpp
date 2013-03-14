@@ -13,6 +13,8 @@ Ressource::Ressource() {
 	// TODO Auto-generated constructor stub
 }
 
+Ressource::Ressource(const Position _pos, const string _name, int _qte, int _pv):Element(_pos,_name),quantite(_qte),pointDeVie(_pv){}
+
 Ressource::~Ressource() {
 	// TODO Auto-generated destructor stub
 }
