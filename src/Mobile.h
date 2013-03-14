@@ -13,13 +13,14 @@ using namespace std;
 
 class Mobile: public Element {
 private :
-	int vision;
+	int vitesse;
 
 public:
 	Mobile();
+	Mobile(const Position, const string, int);
 	virtual ~Mobile();
-	int getVision() const;
-	void setVision(int vision);
+	int getVitesse() const;
+	void setVitesse(int vision);
 };
 
 #endif /* MOBILE_H_ */

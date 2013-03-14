@@ -13,12 +13,14 @@ Mobile::Mobile() {
 
 }
 
-int Mobile::getVision() const {
-	return vision;
+Mobile::Mobile(const Position _pos, const string _n, int _vit):Element(_pos, _n), vitesse(_vit){}
+
+int Mobile::getVitesse() const {
+	return vitesse;
 }
 
-void Mobile::setVision(int vision) {
-	this->vision = vision;
+void Mobile::setVitesse(int vitesse) {
+	this->vitesse = vitesse;
 }
 
 
