@@ -10,3 +10,11 @@ Thibaut Revilliod
 
 Projet consistant à développer une application simulant le jeu de la vie.
 
+Population :
+Hommes (Homer)
+Femmes (Marge)
+Enfants (Maggie)
+
+Ressources :
+Cochons /Mobile/
+Donuts  /Immobile/
