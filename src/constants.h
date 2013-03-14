@@ -13,7 +13,7 @@ const int nbFemme = 10;
 const int nbDonuts = 5;
 const int nbCochon = 5;
 const int largM = 16; // Largeur - abscisse
-const int longM = 16; // Hauteur - ordonnŽes
+const int longM = 16; // Hauteur - ordonnées
 
 
 #endif /* CONSTANTS_H_ */
