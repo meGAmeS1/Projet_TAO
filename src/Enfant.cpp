@@ -13,6 +13,9 @@ Enfant::Enfant() {
 
 }
 
+Enfant::Enfant(const Position _pos, const string _n, int _vit, int _a, int _edv, int _vis):Humain(_pos, _n, _vit, _a, _edv, _vis){}
+
+
 Enfant::~Enfant() {
 	// TODO Auto-generated destructor stub
 }

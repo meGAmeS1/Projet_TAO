@@ -14,6 +14,7 @@ using namespace std;
 class Enfant: public Humain {
 public:
 	Enfant();
+	Enfant(const Position, const string, int, int, int, int);
 	virtual ~Enfant();
 };
 
