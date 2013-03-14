@@ -47,8 +47,11 @@ void Monde::setCarte(const map<Position, unsigned>& carte) {
 
 bool Monde::existPos(Position pos) {
 	bool result = false;
+	map<Position, unsigned int>::const_iterator it;
+	it = carte.end();
 
-	// Méthode qui recherche la position
+	if (carte.find(pos) != it) result = true;
+
 	return result;
 }
 
@@ -75,6 +78,7 @@ Position Monde::creerPos()
 		pos = Position (posX,posY);
 
 		if (! existPos(pos)) isOk = true;
+
 	}
 
 	return pos;
