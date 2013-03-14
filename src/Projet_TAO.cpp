@@ -10,6 +10,7 @@
 #include "Element.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <conio.h>		/* clrscr */
 #include <iostream>
 #include <string>
 
@@ -29,6 +30,7 @@ int main() {
 		monde.push_back(elt1);
 		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var ) );
 	}
+
 
 	monde.afficher();
 
