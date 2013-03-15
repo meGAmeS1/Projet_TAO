@@ -13,8 +13,10 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include <map>
-#include "Element.h"
+#include <string>
 #include "Position.h"
+
+class Element;
 
 class Monde : public vector<Element*>{
 public:
@@ -32,3 +34,28 @@ private:
 };
 
 #endif /* MONDE_H_ */
+
+#ifndef ELEMENT_H_
+#define ELEMENT_H_
+
+class Element {
+private:
+	Position pos;
+	string name;
+	Monde * earth;
+public:
+	Element();
+	Element(const Position, const string);
+	virtual ~Element();
+	const Position& getPos() const;
+	void setPos(const Position& pos);
+	void afficher();
+	const string& getName() const;
+	void setName(const string& name);
+	const Monde* getEarth() const;
+	void setEarth(Monde* earth);
+};
+
+#endif
+
+

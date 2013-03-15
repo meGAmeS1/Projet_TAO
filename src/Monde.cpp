@@ -6,7 +6,6 @@
  */
 
 #include "Monde.h"
-#include "Element.h"
 #include "Position.h"
 #include "constants.h"
 #include <stdlib.h>     /* srand, rand */

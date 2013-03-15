@@ -8,7 +8,9 @@
 #ifndef MOBILE_H_
 #define MOBILE_H_
 
-#include "Element.h"
+#include "Monde.h"
+#include "Position.h"
+#include <string>
 using namespace std;
 
 class Mobile: public Element {

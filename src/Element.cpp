@@ -5,7 +5,7 @@
  *      Author: quentin
  */
 
-#include "Element.h"
+#include "Monde.h"
 #include "Position.h"
 
 using namespace std;
@@ -27,6 +27,14 @@ void Element::setPos(const Position& pos) {
 
 const string& Element::getName() const {
 	return name;
+}
+
+const Monde* Element::getEarth() const {
+	return earth;
+}
+
+void Element::setEarth(Monde* earth) {
+	this->earth = earth;
 }
 
 void Element::setName(const string& name) {

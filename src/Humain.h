@@ -9,6 +9,8 @@
 #define HUMAIN_H_
 
 #include "Mobile.h"
+#include "Position.h"
+#include <string>
 
 using namespace std;
 

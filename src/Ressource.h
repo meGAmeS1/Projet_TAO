@@ -8,7 +8,8 @@
 #ifndef RESSOURCE_H_
 #define RESSOURCE_H_
 
-#include "Element.h"
+#include "Monde.h"
+#include "Position.h"
 #include <string>
 
 using namespace std;

@@ -9,6 +9,8 @@
 #define ENFANT_H_
 
 #include "Humain.h"
+#include "Position.h"
+#include <string>
 using namespace std;
 
 class Enfant: public Humain {

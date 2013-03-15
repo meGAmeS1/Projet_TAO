@@ -9,6 +9,7 @@
 #define HOMME_H_
 
 #include "Humain.h"
+#include "Position.h"
 #include <string>
 using namespace std;
 

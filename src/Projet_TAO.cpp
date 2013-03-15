@@ -7,7 +7,6 @@
 //============================================================================
 
 #include "Monde.h"
-#include "Element.h"
 #include "Enfant.h"
 #include "Femme.h"
 #include "Homme.h"
