@@ -16,4 +16,7 @@ const int largM = 16; // Largeur - abscisse
 const int longM = 16; // Hauteur - ordonnées
 
 
+/* DIRECTIONS */
+typedef enum {NORD,NORDEST,NORDOUEST,SUD,SUDEST,SUDOUEST} Direction;
+
 #endif /* CONSTANTS_H_ */

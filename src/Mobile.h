@@ -9,6 +9,7 @@
 #define MOBILE_H_
 
 #include "Element.h"
+#include "constants.h"
 using namespace std;
 
 class Mobile: public Element {
@@ -21,6 +22,7 @@ public:
 	virtual ~Mobile();
 	int getVitesse() const;
 	void setVitesse(int vision);
+	bool seDeplacer(Direction);
 };
 
 #endif /* MOBILE_H_ */
