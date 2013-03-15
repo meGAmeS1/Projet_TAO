@@ -11,6 +11,7 @@
 #include "Monde.h"
 #include "Position.h"
 #include <string>
+#include "constants.h"
 using namespace std;
 
 class Mobile: public Element {
@@ -23,6 +24,7 @@ public:
 	virtual ~Mobile();
 	int getVitesse() const;
 	void setVitesse(int vision);
+	bool seDeplacer(Direction);
 };
 
 #endif /* MOBILE_H_ */

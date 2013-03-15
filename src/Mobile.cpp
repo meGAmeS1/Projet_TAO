@@ -7,6 +7,7 @@
 
 #include "Mobile.h"
 #include "Monde.h"
+#include "constants.h"
 using namespace std;
 
 Mobile::Mobile() {
@@ -29,3 +30,7 @@ Mobile::~Mobile() {
 	// TODO Auto-generated destructor stub
 }
 
+bool Mobile::seDeplacer(Direction _dir){
+	// a compléter ...
+	return false;
+}
