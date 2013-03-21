@@ -21,7 +21,7 @@ private:
 	int vision;
 public:
 	Humain();
-	Humain(const Position, const string, int, int, int, int);
+	Humain(const Position, const string, Monde*, int, int, int, int);
 	virtual ~Humain();
 	int getAge() const;
 	void setAge(int age);

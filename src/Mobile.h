@@ -20,10 +20,11 @@ private :
 
 public:
 	Mobile();
-	Mobile(const Position, const string, int);
+	Mobile(const Position, const string, Monde*, int);
 	virtual ~Mobile();
 	int getVitesse() const;
 	void setVitesse(int vision);
+	virtual void agir();
 	bool seDeplacer(Direction);
 };
 

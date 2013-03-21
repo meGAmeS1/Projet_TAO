@@ -15,7 +15,7 @@ Mobile::Mobile() {
 
 }
 
-Mobile::Mobile(const Position _pos, const string _n, int _vit):Element(_pos, _n), vitesse(_vit){}
+Mobile::Mobile(const Position _pos, const string _n, Monde* _e , int _vit):Element(_pos, _n, _e), vitesse(_vit){}
 
 int Mobile::getVitesse() const {
 	return vitesse;
@@ -30,11 +30,15 @@ Mobile::~Mobile() {
 	// TODO Auto-generated destructor stub
 }
 
+void Mobile::agir(){
+	this->seDeplacer(SUDEST);
+}
+
 bool Mobile::seDeplacer(Direction _dir){
 
 
 	Position oldPos = this->getPos();
-	Position posFuture = this->getPos(); // on initialise la posfuture avec l'actuelle
+	Position posFuture = Position(this->getPos().getAbs(),this->getPos().getOrd()); // on initialise la posfuture avec l'actuelle
 
 	switch (_dir) {
 		case NORD:
@@ -94,7 +98,6 @@ bool Mobile::seDeplacer(Direction _dir){
 	}
 
 	//on change l'élément de position
-
 	unsigned indice = this->getEarth()->getCarteEdit().find(oldPos)->second;
 	this->setPos(posFuture);
 	this->getEarth()->getCarteEdit().erase(oldPos);

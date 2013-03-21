@@ -16,7 +16,7 @@ using namespace std;
 class Homme: public Humain {
 public:
 	Homme();
-	Homme(const Position, const string, int, int, int, int);
+	Homme(const Position, const string, Monde*, int, int, int, int);
 	virtual ~Homme();
 };
 

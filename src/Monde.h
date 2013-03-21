@@ -15,6 +15,7 @@ using namespace std;
 #include <map>
 #include <string>
 #include "Position.h"
+#include "constants.h"
 
 class Element;
 
@@ -25,7 +26,6 @@ public:
 	void afficher();
 	const map<Position, unsigned>& getCarte() const;
 	map<Position, unsigned>& getCarteEdit();
-	void setCarte(const map<Position, unsigned>& carte);
 	Position creerPos();
 	bool existPos(Position);
 
@@ -45,7 +45,8 @@ private:
 	Monde * earth;
 public:
 	Element();
-	Element(const Position, const string);
+	Element(const Position, const string, Monde*);
+	Element(const Element &);
 	virtual ~Element();
 	const Position& getPos() const;
 	void setPos(const Position& pos);
@@ -54,6 +55,7 @@ public:
 	void setName(const string& name);
 	Monde* getEarth() const;
 	void setEarth(Monde* earth);
+	virtual void agir(void);
 };
 
 #endif

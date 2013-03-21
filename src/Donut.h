@@ -16,7 +16,7 @@ using namespace std;
 class Donut: public Ressource {
 public:
 	Donut();
-	Donut(const Position, const string, int, int);
+	Donut(const Position, const string, Monde*, int, int);
 	virtual ~Donut();
 };
 

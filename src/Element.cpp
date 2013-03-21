@@ -15,7 +15,15 @@ Element::Element() {
 
 }
 
-Element::Element(const Position _p, const string _n):pos(_p),name(_n) {}
+Element::Element(const Position _p, const string _n, Monde* _e):pos(_p),name(_n) {
+    this->earth = _e;
+}
+
+Element::Element(const Element & _E){
+    this->pos = _E.pos;
+    this->name = _E.name;
+    this->earth = _E.earth;
+}
 
 const Position& Element::getPos() const {
 	return pos;
@@ -44,6 +52,9 @@ void Element::setName(const string& name) {
 void Element::afficher(){
 cout<<name<<" "<<pos<<endl;
 }
+
+void Element::agir(){}
+
 
 Element::~Element() {
 	// TODO Auto-generated destructor stub

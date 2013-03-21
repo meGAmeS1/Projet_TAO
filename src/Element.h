@@ -19,6 +19,7 @@ class Element {
 private:
 	Position pos;
 	string name;
+	Monde * earth;
 public:
 	Element();
 	Element(const Position, const string);
@@ -28,6 +29,8 @@ public:
 	void afficher();
 	const string& getName() const;
 	void setName(const string& name);
+	Monde* getEarth() const;
+	void setEarth(Monde* earth);
 };
 
 #endif /* ELEMENT_H_ */

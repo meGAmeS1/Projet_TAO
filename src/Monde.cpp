@@ -40,10 +40,6 @@ map<Position, unsigned>& Monde::getCarteEdit() {
 	return carte;
 }
 
-void Monde::setCarte(const map<Position, unsigned>& carte) {
-	this->carte = carte;
-}
-
 bool Monde::existPos(Position pos) {
 	bool result = false;
 	map<Position, unsigned int>::const_iterator it;

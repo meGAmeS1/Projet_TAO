@@ -20,7 +20,7 @@ private:
 	int pointDeVie;
 public:
 	Ressource();
-	Ressource(const Position, const string, int, int);
+	Ressource(const Position, const string, Monde*, int, int);
 	virtual ~Ressource();
 	int getPointDeVie() const;
 	void setPointDeVie(int pointDeVie);

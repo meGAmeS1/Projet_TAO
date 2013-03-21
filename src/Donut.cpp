@@ -13,7 +13,7 @@ Donut::Donut() {
 	// TODO Auto-generated constructor stub
 }
 
-Donut::Donut(const Position _pos, const string _name, int _qte, int _pv):Ressource(_pos, _name, _qte, _pv){}
+Donut::Donut(const Position _pos, const string _name, Monde* _e, int _qte, int _pv):Ressource(_pos, _name, _e, _qte, _pv){}
 
 
 Donut::~Donut() {
