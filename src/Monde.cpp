@@ -26,10 +26,10 @@ void Monde::afficher()
 cout<<"Vector : "<<endl;
 for (unsigned i=0 ; i< size() ; i++)
 at(i)->afficher();
-cout<<"Map : "<<endl;
-map<Position, unsigned>::const_iterator Iter;
-for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
-cout<<Iter->first<<" "<<Iter->second<<endl;
+//cout<<"Map : "<<endl;
+//map<Position, unsigned>::const_iterator Iter;
+//for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
+//cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 
 const map<Position, unsigned>& Monde::getCarte() const {
@@ -58,11 +58,11 @@ Position Monde::creerPos()
 
 	while (isOk == false)
 	{
-		posX = rand() % largM + 1;
-		posY = rand() % longM + 1;
+		posX = rand() % kLargM + 1;
+		posY = rand() % kLongM + 1;
 
 		if ((posX + posY) % 2 == 1) {
-			if (posY < largM) {
+			if (posY < kLargM) {
 				posY++;
 			}
 			else {

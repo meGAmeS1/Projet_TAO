@@ -31,7 +31,7 @@ Mobile::~Mobile() {
 }
 
 void Mobile::agir(){
-	this->seDeplacer(SUDEST);
+	this->seDeplacer(SUDOUEST);
 }
 
 bool Mobile::seDeplacer(Direction _dir){
@@ -42,14 +42,14 @@ bool Mobile::seDeplacer(Direction _dir){
 
 	switch (_dir) {
 		case NORD:
-			if (posFuture.getOrd()<(longM-1))
+			if (oldPos.getOrd()<(kLongM-1))
 				posFuture.setOrd(posFuture.getOrd()+2);
 			else
 				return false;
 		break;
 
 		case NORDOUEST:
-			if (posFuture.getOrd()<longM && posFuture.getAbs()>1){
+			if (oldPos.getOrd()<kLongM && oldPos.getAbs()>1){
 				posFuture.setOrd(posFuture.getOrd()+1);
 				posFuture.setAbs(posFuture.getAbs()-1);
 			}
@@ -58,7 +58,7 @@ bool Mobile::seDeplacer(Direction _dir){
 		break;
 
 		case NORDEST:
-			if (posFuture.getOrd()<longM && posFuture.getAbs()<largM){
+			if (oldPos.getOrd()<kLongM && oldPos.getAbs()<kLargM){
 							posFuture.setOrd(posFuture.getOrd()+1);
 							posFuture.setAbs(posFuture.getAbs()+1);
 			}
@@ -67,14 +67,14 @@ bool Mobile::seDeplacer(Direction _dir){
 		break;
 
 		case SUD:
-			if (posFuture.getOrd()>2)
+			if (oldPos.getOrd()>2)
 				posFuture.setOrd(posFuture.getOrd()-2);
 			else
 				return false;
 		break;
 
 		case SUDOUEST:
-			if (posFuture.getOrd()>1 && posFuture.getAbs()>1){
+			if (oldPos.getOrd()>1 && oldPos.getAbs()>1){
 				posFuture.setOrd(posFuture.getOrd()-1);
 				posFuture.setAbs(posFuture.getAbs()-1);
 			}
@@ -83,17 +83,18 @@ bool Mobile::seDeplacer(Direction _dir){
 		break;
 
 		case SUDEST:
-			if (posFuture.getOrd()>1 && posFuture.getAbs()<largM){
+			if (oldPos.getOrd()>1 && oldPos.getAbs()<kLargM){
 				posFuture.setOrd(posFuture.getOrd()-1);
 				posFuture.setAbs(posFuture.getAbs()+1);
 			}
 			else
-				return false;
+                return false;
 		break;
 	}
 
 	//on vérifie si il y a un élément à cette position future
 	if(this->getEarth()->existPos(posFuture)){
+	    cout<<"Place oqp "<<oldPos<<"->"<<posFuture<<endl;
 		return false;
 	}
 

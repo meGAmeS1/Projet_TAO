@@ -8,12 +8,15 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 
-const int nbHomme = 10;
-const int nbFemme = 10;
-const int nbDonuts = 5;
-const int nbCochon = 5;
-const int largM = 16; // Largeur - abscisse
-const int longM = 16; // Hauteur - ordonnées
+/* Elements au démarage */
+const int kNbHomme = 8;
+const int kNbFemme = 8;
+const int kNbDonuts = 5;
+const int kNbCochon = 5;
+
+/*Monde*/
+const int kLargM = 16; // Largeur - abscisse
+const int kLongM = 16; // Hauteur - ordonnées
 
 
 /* DIRECTIONS */

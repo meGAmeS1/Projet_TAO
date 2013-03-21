@@ -16,6 +16,7 @@ using namespace std;
 class Cochon: public Ressource, public Mobile {
 public:
 	Cochon();
+	Cochon(const Position, const string, Monde*, int, int, int);
 	virtual ~Cochon();
 };
 

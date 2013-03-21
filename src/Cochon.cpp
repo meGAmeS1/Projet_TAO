@@ -14,6 +14,8 @@ Cochon::Cochon() {
 
 }
 
+Cochon::Cochon(const Position _pos, const string _name, Monde* _e, int _vit, int _qte, int _pv):Mobile(_pos, _name, _e, _vit),Ressource(_pos, _name, _e, _qte, _pv){}
+
 Cochon::~Cochon() {
 	// TODO Auto-generated destructor stub
 }
