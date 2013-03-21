@@ -3,7 +3,7 @@
 // Author      : Le-Moal/Maginot/Revilliod
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Jeu de la vie
 //============================================================================
 
 #include "Monde.h"
@@ -93,7 +93,26 @@ int main() {
 	unH->seDeplacer(NORDEST);
 
 	cout<<"\n______________ monde avec nouveau homer qui s'est deplace au nord-est (x+1;y+1)________________";
+
+
+
+	/*Test de seDeplacer*/
+	Position pos = monde.creerPos();
+	string nom = "Homer";
+	int vitesse = 1;
+	int age = 18;
+	int espDeVie = 70;
+	int vision = 2;
+
+	Homme * hom = new Homme(pos, nom, vitesse, age, espDeVie, vision);
+	monde.push_back(hom);
+	monde.getCarteEdit().insert(pair <Position, unsigned> (pos, 20 ) );
+
 	monde.afficher();
+
+	hom->seDeplacer(NORDOUEST);
+	monde.afficher();
+	/*------*/
 
 	return 0;
 }

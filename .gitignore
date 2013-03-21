@@ -21,3 +21,7 @@
 .project
 .settings
 Debug/
+
+#Fichiers de codeblocks
+Projet_TAO.cbp
+.settings/

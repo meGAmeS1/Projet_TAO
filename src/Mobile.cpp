@@ -32,7 +32,9 @@ Mobile::~Mobile() {
 
 bool Mobile::seDeplacer(Direction _dir){
 
-	Position posFuture = this->getPos();
+
+	Position oldPos = this->getPos();
+	Position posFuture = this->getPos(); // on initialise la posfuture avec l'actuelle
 
 	switch (_dir) {
 		case NORD:
@@ -92,9 +94,12 @@ bool Mobile::seDeplacer(Direction _dir){
 	}
 
 	//on change l'élément de position
-	this->getEarth()->getCarteEdit().insert(pair <Position, unsigned> (posFuture, this->getEarth()->getCarteEdit().at(this->getPos())));
-	this->getEarth()->getCarteEdit().erase(this->getPos());
+
+	unsigned indice = this->getEarth()->getCarteEdit().find(oldPos)->second;
 	this->setPos(posFuture);
+	this->getEarth()->getCarteEdit().erase(oldPos);
+	this->getEarth()->getCarteEdit().insert(pair <Position, unsigned> (posFuture, indice));
+
 
 	return true;
 }
