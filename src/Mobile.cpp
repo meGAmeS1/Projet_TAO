@@ -31,6 +31,71 @@ Mobile::~Mobile() {
 }
 
 bool Mobile::seDeplacer(Direction _dir){
-	// a compléter ...
-	return false;
+
+	Position posFuture = this->getPos();
+
+	switch (_dir) {
+		case NORD:
+			if (posFuture.getOrd()<(longM-1))
+				posFuture.setOrd(posFuture.getOrd()+2);
+			else
+				return false;
+		break;
+
+		case NORDOUEST:
+			if (posFuture.getOrd()<longM && posFuture.getAbs()>1){
+				posFuture.setOrd(posFuture.getOrd()+1);
+				posFuture.setAbs(posFuture.getAbs()-1);
+			}
+			else
+				return false;
+		break;
+
+		case NORDEST:
+			if (posFuture.getOrd()<longM && posFuture.getAbs()<largM){
+							posFuture.setOrd(posFuture.getOrd()+1);
+							posFuture.setAbs(posFuture.getAbs()+1);
+			}
+			else
+				return false;
+		break;
+
+		case SUD:
+			if (posFuture.getOrd()>2)
+				posFuture.setOrd(posFuture.getOrd()-2);
+			else
+				return false;
+		break;
+
+		case SUDOUEST:
+			if (posFuture.getOrd()>1 && posFuture.getAbs()>1){
+				posFuture.setOrd(posFuture.getOrd()-1);
+				posFuture.setAbs(posFuture.getAbs()-1);
+			}
+			else
+				return false;
+		break;
+
+		case SUDEST:
+			if (posFuture.getOrd()>1 && posFuture.getAbs()<largM){
+				posFuture.setOrd(posFuture.getOrd()-1);
+				posFuture.setAbs(posFuture.getAbs()+1);
+			}
+			else
+				return false;
+		break;
+	}
+
+	//on vérifie si il y a un élément à cette position future
+	if(this->getEarth()->existPos(posFuture)){
+		return false;
+	}
+
+	//on change l'élément de position
+	this->getEarth()->getCarteEdit().insert(pair <Position, unsigned> (posFuture, this->getEarth()->getCarteEdit().at(this->getPos())));
+	this->getEarth()->getCarteEdit().erase(this->getPos());
+	this->setPos(posFuture);
+
+	return true;
 }
+

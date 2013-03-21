@@ -52,7 +52,7 @@ public:
 	void afficher();
 	const string& getName() const;
 	void setName(const string& name);
-	const Monde* getEarth() const;
+	Monde* getEarth() const;
 	void setEarth(Monde* earth);
 };
 
