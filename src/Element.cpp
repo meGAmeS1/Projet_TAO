@@ -29,7 +29,7 @@ const string& Element::getName() const {
 	return name;
 }
 
-const Monde* Element::getEarth() const {
+Monde* Element::getEarth() const {
 	return earth;
 }
 
