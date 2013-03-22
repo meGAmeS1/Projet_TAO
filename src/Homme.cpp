@@ -6,6 +6,8 @@
  */
 
 #include "Homme.h"
+#include "Cochon.h"
+#include "Position.h"
 using namespace std;
 
 Homme::Homme() {
@@ -17,5 +19,19 @@ Homme::Homme(const Position _pos, const string _n, Monde* _e, int _vit, int _a, 
 
 Homme::~Homme() {
 	// TODO Auto-generated destructor stub
+}
+
+bool Homme::recupDonut(){
+//    Cochon unCochon;
+//    Position posCochon = this->chercher(unCochon);
+//    if (posCochon!=NULL){
+//        unsigned idCochon = this->getEarth()->getCarte().find(posCochon)->second;
+//        int qte = this->getEarth()->at(idCochon)->getQuantite();
+//        /************/
+//        /*A continuer*/
+//        /***************/
+//
+//    }
+
 }
 
