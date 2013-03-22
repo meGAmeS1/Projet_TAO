@@ -60,7 +60,7 @@ Position Humain::chercher(Element unEle) {
 	}
 	else
 	{
-		return (NULL);
+		return (Position(0,0));
 	}
 
 }
