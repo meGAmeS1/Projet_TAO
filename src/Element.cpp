@@ -15,7 +15,10 @@ Element::Element() {
 
 }
 
-Element::Element(const Position _p, const string _n, Monde* _e):pos(_p),name(_n) {
+Element::Element(Monde *_e):
+pos(),
+name("Element")
+{
     this->earth = _e;
 }
 

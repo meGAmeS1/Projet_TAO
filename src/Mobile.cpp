@@ -16,7 +16,7 @@ Mobile::Mobile() {
 }
 
 Mobile::Mobile(const Position _pos, const string _n, Monde* _e , int _vit):
-    Element(_pos, _n, _e),
+    Element(_e),
     vitesse(_vit)
 {
     setPos(_pos);

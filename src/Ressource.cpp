@@ -14,7 +14,7 @@ Ressource::Ressource() {
 }
 
 Ressource::Ressource(const Position _pos, const string _name, Monde* _e, int _qte, int _pv):
-    Element(_pos,_name, _e),
+    Element(_e),
     quantite(_qte),
     pointDeVie(_pv)
 {
