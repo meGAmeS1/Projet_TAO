@@ -15,7 +15,13 @@ Mobile::Mobile() {
 
 }
 
-Mobile::Mobile(const Position _pos, const string _n, Monde* _e , int _vit):Element(_pos, _n, _e), vitesse(_vit){}
+Mobile::Mobile(const Position _pos, const string _n, Monde* _e , int _vit):
+    Element(_pos, _n, _e),
+    vitesse(_vit)
+{
+    setPos(_pos);
+    setName(_n);
+}
 
 int Mobile::getVitesse() const {
 	return vitesse;

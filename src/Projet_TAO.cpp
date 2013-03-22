@@ -70,21 +70,22 @@ int main() {
 	iDejaFait += kNbFemme;
 
 
-//    // Boucle d'ajout de Cochons
-//	for (var = iDejaFait; var < (iDejaFait+kNbCochon); var++) {
-//		Position pos = monde.creerPos();
-//		string nom = "Spider Cochon";
-//		int vitesse = 1;
-//		int quantite = 1;
-//		int ptDeVie = 1;
-//
-//		Element * coc = new Cochon(pos, nom, &monde, vitesse, quantite, ptDeVie);
-//		monde.push_back(coc);
-//		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var ) );
-//
-//	}
-//
-//    iDejaFait += kNbCochon;
+    // Boucle d'ajout de Cochons
+	for (var = iDejaFait; var < (iDejaFait+kNbCochon); var++) {
+		Position pos = monde.creerPos();
+		string nom = "Spider Cochon";
+		int vitesse = 1;
+		int quantite = 1;
+		int ptDeVie = 1;
+
+		Element * coc = new Cochon(pos, nom, &monde, vitesse, quantite, ptDeVie);
+		monde.push_back(coc);
+		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var ) );
+
+		placerElement(coc);
+	}
+
+    iDejaFait += kNbCochon;
 
 	// Boucle d'ajout de Donuts
 	for (var = iDejaFait; var < (iDejaFait+kNbDonuts); var++) {
@@ -108,17 +109,16 @@ int main() {
 //
 //    cout<<"\nDeplacement...\n"<<endl;
 //
-    for (var=0; var<iDejaFait;var++){
-        getch();
-        supprimerPosition(monde.at(var)->getPos());
-        monde.at(var)->agir();
-        placerElement(monde.at(var));
-    }
+//    for (var=0; var<iDejaFait;var++){
+//        getch();
+//        supprimerPosition(monde.at(var)->getPos());
+//        monde.at(var)->agir();
+//        placerElement(monde.at(var));
+//    }
 //
 //    cout<<"\n Apres deplacement"<<endl;
 //    monde.afficher();
 
     gotoxy(0,25);
-
     return 0;
 }

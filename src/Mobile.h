@@ -14,7 +14,7 @@
 #include "constants.h"
 using namespace std;
 
-class Mobile: public Element {
+class Mobile: public virtual Element {
 private :
 	int vitesse;
 

@@ -14,7 +14,7 @@
 
 using namespace std;
 
-class Ressource: public Element {
+class Ressource: public virtual Element {
 private:
 	int quantite;
 	int pointDeVie;

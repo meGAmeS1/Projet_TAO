@@ -140,7 +140,7 @@ void placerElement(const Element *_ele) {
         placerPosition(_ele->getPos(),"D", LIGHTGREEN);
     }
     else if (typeid(*_ele) == typeid(Cochon)) {
-        placerPosition(_ele->getPos(),"C", MAGENTA);
+        placerPosition(_ele->getPos(),"C", LIGHTMAGENTA);
     }
     else {
         placerPosition(_ele->getPos(),"?", LIGHTRED);
