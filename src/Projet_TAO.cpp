@@ -12,11 +12,14 @@
 #include "Homme.h"
 #include "Donut.h"
 #include "constants.h"
+#include "econio.h"
+#include "Affichage.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <conio.h>		/* clrscr */
 #include <iostream>
 #include <string>
+
 
 using namespace std;
 
@@ -99,6 +102,10 @@ int main() {
 
     cout<<"\n Apres deplacement"<<endl;
     monde.afficher();
-
-	return 0;
+    clrscr();
+    afficherGrille();
+    Position postest = Position (1,1);
+    placerPosition(postest,"A");
+    gotoxy(0,25);
+    return 0;
 }

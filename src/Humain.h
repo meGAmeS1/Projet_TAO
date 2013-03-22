@@ -9,6 +9,7 @@
 #define HUMAIN_H_
 
 #include "Mobile.h"
+#include "Cochon.h"
 #include "Position.h"
 #include <string>
 
@@ -29,6 +30,7 @@ public:
 	void setEsperanceDeVie(int esperanceDeVie);
 	int getVision() const;
 	void setVision(int vision);
+	Position chercher(Element ele);
 };
 
 #endif /* HUMAIN_H_ */

@@ -6,6 +6,9 @@
  */
 
 #include "Humain.h"
+#include "Monde.h"
+#include "Position.h"
+#include "typeinfo"
 
 using namespace std;
 
@@ -38,6 +41,28 @@ void Humain::setVision(int vision) {
 
 void Humain::setEsperanceDeVie(int esperanceDeVie) {
 	this->esperanceDeVie = esperanceDeVie;
+}
+
+Position Humain::chercher(Element unEle) {
+	int x = this->getPos().getAbs();
+	int y = this->getPos().getOrd();
+	Position posParcours;
+	Position posRetournee;
+
+	posParcours = Position(x,y+1);
+
+	if(this->getEarth()->existPos(posParcours))
+	{
+		if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(posParcours)->second)) )==typeid(Element) )
+		{
+			return posRetournee;
+		}
+	}
+	else
+	{
+		return (NULL);
+	}
+
 }
 
 Humain::~Humain() {

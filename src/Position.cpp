@@ -6,6 +6,7 @@
  */
 
 #include "Position.h"
+#include "econio.h"
 
 Position::Position() {
 	// TODO Auto-generated constructor stub
@@ -16,8 +17,10 @@ Position::Position(int _a, int _o):abs(_a),ord(_o){}
 
 ostream& operator << (ostream & Out, const Position& Cpl)
 {
-Out<< "("<<Cpl.getAbs()<<";"<<Cpl.getOrd()<<")";
-return Out;
+    textcolor(GREEN);
+    Out<< "("<<Cpl.getAbs()<<";"<<Cpl.getOrd()<<")";
+    textcolor(LIGHTGRAY);
+    return Out;
 }
 
 bool Position:: operator < (const Position & p) const
