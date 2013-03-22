@@ -103,22 +103,17 @@ int main() {
 
     iDejaFait += kNbDonuts;
 
-//    cout<<"\n idejafait:"<<iDejaFait<<endl;
-//
-//	monde.afficher();
-//
-//    cout<<"\nDeplacement...\n"<<endl;
-//
+//    // Boucle d'essai pour le déplacement
 //    for (var=0; var<iDejaFait;var++){
 //        getch();
 //        supprimerPosition(monde.at(var)->getPos());
 //        monde.at(var)->agir();
 //        placerElement(monde.at(var));
 //    }
-//
-//    cout<<"\n Apres deplacement"<<endl;
-//    monde.afficher();
+
+
 
     gotoxy(0,25);
+//    monde.afficher();
     return 0;
 }
