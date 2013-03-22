@@ -59,7 +59,7 @@ Position Monde::creerPos()
 	while (isOk == false)
 	{
 		posX = rand() % kLargM + 1;
-		posY = rand() % kLongM + 1;
+		posY = rand() % (kLongM-1) + 1;
 
 		if ((posX + posY) % 2 == 1) {
 			if (posY < kLargM) {
