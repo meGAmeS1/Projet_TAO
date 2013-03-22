@@ -1,7 +1,13 @@
 #include "Affichage.h"
+#include "Homme.h"
+#include "Femme.h"
+#include "Enfant.h"
+#include "Donut.h"
+#include "Cochon.h"
 #include "econio.h"
 #include "constants.h"
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 
@@ -103,11 +109,33 @@ void afficherGrille() {
     textcolor(LIGHTGRAY);
 }
 
-void placerPosition(const Position _pos, const string _letter) {
+void placerPosition(const Position _pos, const string _letter, int color) {
     int x = 4 + _pos.getAbs() * 2;
     int y = 4 + (kLongM - _pos.getOrd());
 
     gotoxy(x,y);
-
+    textcolor(color);
     cout << _letter;
+    textcolor(LIGHTGRAY);
+}
+
+void placerElement(const Element *_ele) {
+    if (typeid(*_ele) == typeid(Homme)) {
+        placerPosition(_ele->getPos(),"H", YELLOW);
+    }
+    else if (typeid(*_ele) == typeid(Femme)) {
+        placerPosition(_ele->getPos(),"F", CYAN);
+    }
+    else if (typeid(*_ele) == typeid(Enfant)) {
+        placerPosition(_ele->getPos(),"M", LIGHTCYAN);
+    }
+    else if (typeid(*_ele) == typeid(Donut)) {
+        placerPosition(_ele->getPos(),"D", LIGHTGREEN);
+    }
+    else if (typeid(*_ele) == typeid(Cochon)) {
+        placerPosition(_ele->getPos(),"C", MAGENTA);
+    }
+    else {
+        placerPosition(_ele->getPos(),"?", LIGHTRED);
+    }
 }

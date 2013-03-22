@@ -11,6 +11,7 @@
 #define ELEMENT_H_
 
 #include "Position.h"
+#include "Monde.h"
 #include <string>
 
 using namespace std;
