@@ -20,7 +20,7 @@
 #include <conio.h>		/* clrscr */
 #include <iostream>
 #include <string>
-
+#include <conio.h>
 
 using namespace std;
 
@@ -108,9 +108,12 @@ int main() {
 //
 //    cout<<"\nDeplacement...\n"<<endl;
 //
-//    for (var=0; var<iDejaFait;var++){
-//        monde.at(var)->agir();
-//    }
+    for (var=0; var<iDejaFait;var++){
+        getch();
+        supprimerPosition(monde.at(var)->getPos());
+        monde.at(var)->agir();
+        placerElement(monde.at(var));
+    }
 //
 //    cout<<"\n Apres deplacement"<<endl;
 //    monde.afficher();

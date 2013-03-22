@@ -94,7 +94,7 @@ bool Mobile::seDeplacer(Direction _dir){
 
 	//on vérifie si il y a un élément à cette position future
 	if(this->getEarth()->existPos(posFuture)){
-	    cout<<"Place oqp "<<oldPos<<"->"<<posFuture<<endl;
+//	    cout<<"Place oqp "<<oldPos<<"->"<<posFuture<<endl;
 		return false;
 	}
 

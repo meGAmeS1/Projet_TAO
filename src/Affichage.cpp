@@ -139,3 +139,7 @@ void placerElement(const Element *_ele) {
         placerPosition(_ele->getPos(),"?", LIGHTRED);
     }
 }
+
+void supprimerPosition (const Position _pos) {
+    placerPosition(_pos, " ", LIGHTGRAY);
+}

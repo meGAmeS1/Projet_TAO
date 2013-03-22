@@ -11,4 +11,5 @@ using namespace std;
 void afficherGrille();
 void placerPosition(const Position _pos, const string _letter, int color);
 void placerElement(const Element *_ele);
+void supprimerPosition (const Position _pos);
 #endif // AFFICHAGE_H
