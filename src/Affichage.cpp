@@ -36,7 +36,34 @@ void afficherGrille() {
     textcolor(BROWN);
 
     // Affichage des cases ... enjoy
-    for (int i = 0; i <= kLongM; i ++)
+    // Première ligne de caractère
+    gotoxy(5,4);
+    int x = kLongM;
+    if (x%2 == 0) {
+        cout << " _/ ";
+    }
+    else {
+        cout << "/ \\_";
+    }
+    for (int j = 1; j < kLargM/2; j++) {
+        if (x%2 == 0) {
+            cout << "\\_/ ";
+        }
+        else {
+            cout << "/ \\_";
+        }
+    }
+
+    if (x%2 == 0) {
+        cout << "\\";
+    }
+
+    if (kLargM%2 != 0) {
+        cout << "_";
+    }
+
+    // Toutes les lignes sauf la première et la dernière
+    for (int i = 1; i < kLongM; i ++)
     {
         gotoxy(5,4+i);
         int x = kLongM - i;
@@ -51,12 +78,28 @@ void afficherGrille() {
 
         if (x%2 == 0) {
             cout << "\\";
+            if (kLargM%2 != 0) {
+                cout << "_/";
+            }
         }
         else {
             cout << "/";
+            if (kLargM%2 != 0) {
+                cout << " \\";
+            }
         }
     }
 
+    // La dernière ligne
+    gotoxy(5,4+kLongM);
+    for (int j = 1; j <= kLargM/2; j++) {
+        cout << "\\_/ ";
+    }
+    if (kLargM%2 != 0) {
+        cout << "\\_/";
+    }
+
+    // Passage à la couleur normale
     textcolor(LIGHTGRAY);
 }
 
