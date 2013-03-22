@@ -42,6 +42,13 @@ void afficherGrille() {
     textcolor(BROWN);
 
     // Affichage des cases ... enjoy
+    // Fermeture suppérieure des cases
+    gotoxy(5,3);
+    for (int j = 1; j <= kLargM/2; j++) {
+
+            cout << "   _";
+
+    }
     // Première ligne de caractère
     gotoxy(5,4);
     int x = kLongM;
