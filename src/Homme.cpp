@@ -8,6 +8,9 @@
 #include "Homme.h"
 #include "Cochon.h"
 #include "Position.h"
+
+#include <stdlib.h>     /* srand, rand */
+
 using namespace std;
 
 Homme::Homme() {
@@ -21,17 +24,21 @@ Homme::~Homme() {
 	// TODO Auto-generated destructor stub
 }
 
-bool Homme::recupDonut(){
-//    Cochon unCochon;
-//    Position posCochon = this->chercher(unCochon);
-//    if (posCochon!=NULL){
-//        unsigned idCochon = this->getEarth()->getCarte().find(posCochon)->second;
-//        int qte = this->getEarth()->at(idCochon)->getQuantite();
-//        /************/
-//        /*A continuer*/
-//        /***************/
-//
-//    }
+void Homme::recupDonut(const Position _posCochon){
+    unsigned idCochon = this->getEarth()->getCarte().find(_posCochon)->second;
+    //int qte = this->getEarth()->at(idCochon)->getQuantite();
+    this->getEarth()->getCarteEdit().erase(_posCochon);
+    this->seDeplacer(this->obtenirDirection(this->getPos(),_posCochon));
+}
+
+void Homme::agir(){
+    Cochon unCochon;
+    Position posCochon = this->chercher(unCochon);
+    if (posCochon!=Position(-1,-1)){
+        this->recupDonut(posCochon);
+    }else{
+        seDeplacer(this->directRandom());
+    }
 
 }
 

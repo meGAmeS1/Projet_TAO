@@ -8,6 +8,10 @@
 #include "Mobile.h"
 #include "Monde.h"
 #include "constants.h"
+
+#include <stdlib.h>     /* srand, rand */
+
+
 using namespace std;
 
 Mobile::Mobile() {
@@ -114,3 +118,20 @@ bool Mobile::seDeplacer(Direction _dir){
 	return true;
 }
 
+Direction Mobile::obtenirDirection(const Position _depart ,const Position _arrivee){
+    int ordonnee = _arrivee.getOrd() - _depart.getOrd();
+    int abscisse = _arrivee.getAbs() - _depart.getAbs();
+    //Position posDif(abscisse,ordonnee);
+
+    if (abscisse==0 && ordonnee==2) return NORD;
+    else if (abscisse==1 && ordonnee==1) return NORDEST;
+    else if (abscisse==1 && ordonnee==-1) return SUDEST;
+    else if (abscisse==0 && ordonnee==-2) return SUD;
+    else if (abscisse==-1 && ordonnee==-1) return SUDOUEST;
+    else if (abscisse==-1 && ordonnee==1) return NORDOUEST;
+}
+
+
+Direction Mobile::directRandom(){
+    Direction d = static_cast<Direction>(rand()%3);
+}

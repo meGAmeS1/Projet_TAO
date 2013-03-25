@@ -18,7 +18,8 @@ public:
 	Homme();
 	Homme(const Position, const string, Monde*, int, int, int, int);
 	virtual ~Homme();
-	bool recupDonut();
+	void recupDonut(const Position);
+	void agir();
 };
 
 #endif /* HOMME_H_ */

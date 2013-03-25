@@ -26,6 +26,9 @@ public:
 	void setVitesse(int vision);
 	virtual void agir();
 	bool seDeplacer(Direction);
+	Direction obtenirDirection(const Position,const Position);
+	Direction directRandom();
+
 };
 
 #endif /* MOBILE_H_ */

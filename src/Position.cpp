@@ -23,6 +23,12 @@ ostream& operator << (ostream & Out, const Position& Cpl)
     return Out;
 }
 
+bool operator != (const Position& _pos1, const Position& _pos2){
+    if((_pos1.getAbs()!=_pos2.getAbs()) && ((_pos1.getOrd()!=_pos2.getOrd()))) return true;
+
+    return false;
+}
+
 bool Position:: operator < (const Position & p) const
 {
  return ((abs< p.abs) || ((abs==p.abs) && (ord<p.ord)));

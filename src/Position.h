@@ -27,6 +27,7 @@ public:
 };
 
 ostream& operator << (ostream &, const Position&);
+bool operator != (const Position&, const Position&);
 
 
 #endif /* POSITION_H_ */
