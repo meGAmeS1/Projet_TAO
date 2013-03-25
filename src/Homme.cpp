@@ -24,21 +24,20 @@ Homme::~Homme() {
 	// TODO Auto-generated destructor stub
 }
 
-void Homme::recupDonut(const Position _posCochon){
-    unsigned idCochon = this->getEarth()->getCarte().find(_posCochon)->second;
+void Homme::recupDonut(const Position _posDonut){
+    unsigned idCochon = this->getEarth()->getCarte().find(_posDonut)->second;
     //int qte = this->getEarth()->at(idCochon)->getQuantite();
-    this->getEarth()->getCarteEdit().erase(_posCochon);
-    this->seDeplacer(this->obtenirDirection(this->getPos(),_posCochon));
+    this->getEarth()->getCarteEdit().erase(_posDonut);
+    this->seDeplacer(this->obtenirDirection(this->getPos(),_posDonut));
 }
 
 void Homme::agir(){
-    Cochon unCochon;
-    Position posCochon = this->chercher(unCochon);
-    if (posCochon!=Position(-1,-1)){
-        this->recupDonut(posCochon);
+    Donut unDonut;
+    Position posDonut = this->chercher(unDonut);
+    if (posDonut!=Position(-1,-1)){
+        this->recupDonut(posDonut);
     }else{
         seDeplacer(this->directRandom());
     }
-
 }
 
