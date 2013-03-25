@@ -16,6 +16,8 @@ public:
 	Femme();
 	Femme(const Position, const string, Monde*, int, int, int, int);
 	virtual ~Femme();
+	void chasser(const Position);
+	void agir();
 };
 
 #endif /* FEMME_H_ */

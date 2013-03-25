@@ -19,3 +19,20 @@ Femme::~Femme() {
 	// TODO Auto-generated destructor stub
 }
 
+void Femme::chasser(const Position _posCochon){
+    unsigned idCochon = this->getEarth()->getCarte().find(_posCochon)->second;
+    //int qte = this->getEarth()->at(idCochon)->getQuantite();
+    this->getEarth()->getCarteEdit().erase(_posCochon);
+    this->seDeplacer(this->obtenirDirection(this->getPos(),_posCochon));
+}
+
+void Femme::agir(){
+    Cochon unCochon;
+    Position posCochon = this->chercher(unCochon);
+    if (posCochon!=Position(-1,-1)){
+        this->chasser(posCochon);
+    }else{
+        seDeplacer(this->directRandom());
+    }
+
+}
