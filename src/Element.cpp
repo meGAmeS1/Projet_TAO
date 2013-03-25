@@ -15,11 +15,11 @@ Element::Element() {
 
 }
 
-Element::Element(Monde *_e):
-pos(),
-name("Element")
+Element::Element(Position _pos, string _n)
 {
-    this->earth = _e;
+    this->pos = _pos;
+    this->name = _n;
+    this->earth = new Monde();
 }
 
 Element::Element(const Element & _E){

@@ -45,7 +45,7 @@ private:
 	Monde * earth;
 public:
 	Element();
-	Element(Monde*);
+	Element(Position, string);
 	Element(const Element &);
 	virtual ~Element();
 	const Position& getPos() const;

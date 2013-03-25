@@ -44,24 +44,62 @@ void Humain::setEsperanceDeVie(int esperanceDeVie) {
 }
 
 Position Humain::chercher(Element unEle) {
-	int x = this->getPos().getAbs();
+//	int x = this->getPos().getAbs();
+//	int y = this->getPos().getOrd();
+//	Position posParcours;
+//	Position posRetournee;
+//
+//	posParcours = Position(x,y+1);
+//
+//	if(this->getEarth()->existPos(posParcours))
+//	{
+//		if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(posParcours)->second)) )==typeid(Element) )
+//		{
+//			return posRetournee;
+//		}
+//	}
+//	else
+//	{
+//		return (Position(0,0));
+//	}
+
+    // nouvelle version
+
+    int x = this->getPos().getAbs();
 	int y = this->getPos().getOrd();
-	Position posParcours;
-	Position posRetournee;
 
-	posParcours = Position(x,y+1);
+	Position tabPos[6];
+	Position pos0, pos1, pos2, pos3, pos4, pos5;
 
-	if(this->getEarth()->existPos(posParcours))
+	pos0 = Position(x,y+2);
+	pos1 = Position(x+1,y+1);
+	pos2 = Position(x+1,y-1);
+	pos3 = Position(x,y-2);
+	pos4 = Position(x-1,y-1);
+	pos5 = Position(x-1,y+1);
+
+	tabPos[0] = pos0;
+	tabPos[1] = pos1;
+	tabPos[2] = pos2;
+	tabPos[3] = pos3;
+	tabPos[4] = pos4;
+	tabPos[5] = pos5;
+
+	int i;
+
+	for(i=0;i<6;i++)
 	{
-		if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(posParcours)->second)) )==typeid(Element) )
-		{
-			return posRetournee;
-		}
-	}
-	else
-	{
-		return (Position(0,0));
-	}
+	    if(this->getEarth()->existPos(tabPos[i]))
+	    {
+	        if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(tabPos[i])->second)) )==typeid(unEle) )
+            {
+                return tabPos[i];
+            }
+        }
+    }
+
+    return (Position(-1,-1)); // on retourne une position qui n'existe pas si on n'a pas trouvé d'élement unEle
+
 
 }
 

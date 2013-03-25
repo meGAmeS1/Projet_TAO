@@ -33,7 +33,7 @@ int main() {
 
     afficherGrille();
 
-	// Boucle d'ajout d'hommes
+	//Boucle d'ajout d'hommes
 	for (var = 0; var < kNbHomme; var++) {
 		Position pos = monde.creerPos();
 		string nom = "Homer";
@@ -46,7 +46,7 @@ int main() {
 		monde.push_back(hom);
 		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var) );
 
-        placerElement(hom);
+       placerElement(hom);
 	}
 
     int iDejaFait = kNbHomme;
@@ -103,17 +103,40 @@ int main() {
 
     iDejaFait += kNbDonuts;
 
-//    // Boucle d'essai pour le déplacement
-//    for (var=0; var<iDejaFait;var++){
-//        getch();
-//        supprimerPosition(monde.at(var)->getPos());
-//        monde.at(var)->agir();
-//        placerElement(monde.at(var));
-//    }
+  //monde.afficher();
 
+  //   Boucle d'essai pour le déplacement
+    for (var=0; var<iDejaFait;var++){
+        getch();
+        supprimerPosition(monde.at(var)->getPos());
+        monde.at(var)->agir();
+        placerElement(monde.at(var));
+    }
+
+//        Position pos = monde.creerPos();
+//		string nom = "Homer cree";
+//		int vitesse = 1;
+//		int age = 18;
+//		int espDeVie = 70;
+//		int vision = 2;
+
+
+
+//		Homme * hom = new Homme(pos, nom, &monde, vitesse, age, espDeVie, vision);
+//		monde.push_back(hom);
+//		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var) );
+//		placerElement(hom);
+
+//cout<<"______________ Monde après création de Homer cree __________________"<<endl;
+//monde.afficher();
+
+		//hom->seDeplacer(NORDOUEST);
+
+  //  cout<<"______________ Monde après déplacement __________________"<<endl;
+//monde.afficher();
 
 
     gotoxy(0,25);
-//    monde.afficher();
+
     return 0;
 }

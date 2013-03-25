@@ -16,11 +16,11 @@ Mobile::Mobile() {
 }
 
 Mobile::Mobile(const Position _pos, const string _n, Monde* _e , int _vit):
-    Element(_e),
-    vitesse(_vit)
+vitesse(_vit)
 {
     setPos(_pos);
     setName(_n);
+    this->setEarth(_e);
 }
 
 int Mobile::getVitesse() const {

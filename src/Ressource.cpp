@@ -14,12 +14,12 @@ Ressource::Ressource() {
 }
 
 Ressource::Ressource(const Position _pos, const string _name, Monde* _e, int _qte, int _pv):
-    Element(_e),
     quantite(_qte),
     pointDeVie(_pv)
 {
     setPos(_pos);
     setName(_name);
+    this->setEarth(_e);
 }
 
 Ressource::~Ressource() {
