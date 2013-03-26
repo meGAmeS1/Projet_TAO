@@ -12,6 +12,7 @@
 #include "Cochon.h"
 #include "Position.h"
 #include <string>
+#include <typeinfo>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ public:
 	void setEsperanceDeVie(int esperanceDeVie);
 	int getVision() const;
 	void setVision(int vision);
-	Position chercher(Element ele);
+	Position chercher(const type_info &);
 };
 
 #endif /* HUMAIN_H_ */

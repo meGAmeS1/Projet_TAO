@@ -8,7 +8,8 @@
 #include "Homme.h"
 #include "Cochon.h"
 #include "Position.h"
-
+#include "Donut.h"
+#include <typeinfo>
 #include <stdlib.h>     /* srand, rand */
 
 using namespace std;
@@ -32,12 +33,10 @@ void Homme::recupDonut(const Position _posDonut){
 }
 
 void Homme::agir(){
-    Donut unDonut;
-    Position posDonut = this->chercher(unDonut);
+    Position posDonut = this->chercher(typeid(Donut));
     if (posDonut!=Position(-1,-1)){
         this->recupDonut(posDonut);
     }else{
         seDeplacer(this->directRandom());
     }
 }
-

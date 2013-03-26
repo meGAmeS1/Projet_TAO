@@ -6,6 +6,8 @@
  */
 
 #include "Femme.h"
+#include "Cochon.h"
+#include <typeinfo>
 using namespace std;
 
 Femme::Femme() {
@@ -27,8 +29,7 @@ void Femme::chasser(const Position _posCochon){
 }
 
 void Femme::agir(){
-    Cochon unCochon;
-    Position posCochon = this->chercher(unCochon);
+    Position posCochon = this->chercher(typeid(Cochon));
     if (posCochon!=Position(-1,-1)){
         this->chasser(posCochon);
     }else{

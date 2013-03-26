@@ -43,7 +43,7 @@ void Humain::setEsperanceDeVie(int esperanceDeVie) {
 	this->esperanceDeVie = esperanceDeVie;
 }
 
-Position Humain::chercher(Element unEle) {
+Position Humain::chercher(const type_info & myType) {
 //	int x = this->getPos().getAbs();
 //	int y = this->getPos().getOrd();
 //	Position posParcours;
@@ -91,8 +91,10 @@ Position Humain::chercher(Element unEle) {
 	{
 	    if(this->getEarth()->existPos(tabPos[i]))
 	    {
-	        if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(tabPos[i])->second)) )==typeid(unEle) )
+	        //cout << myType.name();
+	        if( typeid(*(this->getEarth()->at(this->getEarth()->getCarte().find(tabPos[i])->second)) )==myType )
             {
+                //cout << "OUI";
                 return tabPos[i];
             }
         }
