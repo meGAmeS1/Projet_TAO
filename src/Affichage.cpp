@@ -1,4 +1,5 @@
 #include "Affichage.h"
+#include "Monde.h"
 #include "Homme.h"
 #include "Femme.h"
 #include "Enfant.h"
@@ -149,4 +150,21 @@ void placerElement(const Element *_ele) {
 
 void supprimerPosition (const Position _pos) {
     placerPosition(_pos, " ", LIGHTGRAY);
+}
+
+void effacerAllPos () {
+    for (unsigned i=1 ; i<= kLongM ; i++) {
+        for (unsigned j=1 ; j <= kLargM ; j++) {
+            if ((j + i) % 2 == 0) {
+                supprimerPosition(Position (j,i));
+            }
+        }
+    }
+}
+
+void refreshMap (Monde world) {
+    effacerAllPos();
+    for (unsigned i=0 ; i< world.size() ; i++) {
+        placerElement(world.at(i));
+    }
 }
