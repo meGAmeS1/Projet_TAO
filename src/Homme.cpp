@@ -8,7 +8,7 @@
 #include "Homme.h"
 #include "Cochon.h"
 #include "Position.h"
-
+#include "Donut.h"
 #include <stdlib.h>     /* srand, rand */
 
 using namespace std;

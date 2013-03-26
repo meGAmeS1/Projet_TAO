@@ -104,13 +104,13 @@ int main() {
     iDejaFait += kNbDonuts;
 
   //monde.afficher();
-
+    refreshMap(monde);
   //   Boucle d'essai pour le déplacement
     for (var=0; var<iDejaFait;var++){
         getch();
-        supprimerPosition(monde.at(var)->getPos());
         monde.at(var)->agir();
-        placerElement(monde.at(var));
+
+        refreshMap(monde);
     }
 
 //        Position pos = monde.creerPos();
