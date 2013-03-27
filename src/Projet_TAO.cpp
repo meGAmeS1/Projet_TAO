@@ -105,47 +105,25 @@ int main() {
     iDejaFait += kNbDonuts;
 
   //monde.afficher();
-    refreshMap(monde);
+    refreshMap(monde); // Initialisation de l'affichage carte
   //   Boucle d'essai pour le déplacement
-    while (monde.size() > 16) {
+    while (monde.size() > kNbFemme+kNbHomme) {
         int i=0;
-
+        monde.addDay(); // Passage à un nouveau jour
         while (monde.at(i) != monde.back()) {
-            Sleep(150); // Sleep, ca s'exiprime en microsecond
-            replacerCurs();
+            Sleep(10); // Sleep Temps d'attente pour chaque refresh
 
             monde.at(i)->agir();
 
-            refreshMap(monde);
-            refreshStats(monde);
+            refreshStats(monde); // Rafraichissement des stats
+            if (monde.size() == kNbFemme+kNbHomme) break;
             i++;
         }
     }
 
-//        Position pos = monde.creerPos();
-//		string nom = "Homer cree";
-//		int vitesse = 1;
-//		int age = 18;
-//		int espDeVie = 70;
-//		int vision = 2;
-
-
-
-//		Homme * hom = new Homme(pos, nom, &monde, vitesse, age, espDeVie, vision);
-//		monde.push_back(hom);
-//		monde.getCarteEdit().insert(pair <Position, unsigned> (pos, var) );
-//		placerElement(hom);
-
-//cout<<"______________ Monde après création de Homer cree __________________"<<endl;
-//monde.afficher();
-
-		//hom->seDeplacer(NORDOUEST);
-
-  //  cout<<"______________ Monde après déplacement __________________"<<endl;
-//monde.afficher();
-
-
-    gotoxy(0,25);
-
+    // Attente du joueur pour fermer l'app
+    replacerCurs();
+    cout << " Le jeu est termine !";
+    getch();
     return 0;
 }

@@ -15,7 +15,7 @@
 using namespace std;
 
 Monde::Monde() {
-
+    this->nbJours = 0;
 }
 
 Monde::~Monde() {
@@ -24,13 +24,13 @@ Monde::~Monde() {
 
 void Monde::afficher()
 {
-cout<<"Vector : "<<endl;
-for (unsigned i=0 ; i< size() ; i++)
-at(i)->afficher();
-cout<<"Map : "<<endl;
-map<Position, unsigned>::const_iterator Iter;
-for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
-cout<<Iter->first<<" "<<Iter->second<<endl;
+    cout<<"Vector : "<<endl;
+    for (unsigned i=0 ; i< size() ; i++)
+    at(i)->afficher();
+    cout<<"Map : "<<endl;
+    map<Position, unsigned>::const_iterator Iter;
+    for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
+    cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 
 const map<Position, unsigned>& Monde::getCarte() const {
@@ -97,4 +97,12 @@ int Monde::getNombre (const type_info & myType) {
     }
 
     return nb;
+}
+
+int Monde::getNbJours() {
+    return this->nbJours;
+}
+
+void Monde::addDay() {
+    this->nbJours++;
 }

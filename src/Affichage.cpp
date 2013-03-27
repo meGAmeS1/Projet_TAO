@@ -15,6 +15,7 @@
 using namespace std;
 
 void afficherStructure() {
+    // Réglage de la taille de la console
     int lines = 11 + kLongM;
     int cols = 30 + 2*kLargM;
     stringstream configCons;
@@ -124,7 +125,7 @@ void afficherStructure() {
     }
 
     // Passage à la couleur normale
-    textcolor(LIGHTGRAY);
+    textcolor(DARKGRAY);
 
     // Grille de l'application
     gotoxy(10+2*kLargM,2);
@@ -137,6 +138,11 @@ void afficherStructure() {
         cout << "|";
     }
 
+    gotoxy(10+2*kLargM,4);
+    for(int i = 60; i<80; i++) {
+        cout << "-";
+    }
+
     gotoxy(0,6+kLongM);
     for(int i = 0; i<cols; i++) {
         cout << "-";
@@ -147,6 +153,7 @@ void afficherStructure() {
         cout << "-";
     }
 
+    // Légende
     gotoxy(2,7+kLongM);
     textcolor(YELLOW);
     cout << "H : Homme";
@@ -167,27 +174,32 @@ void afficherStructure() {
     textcolor(LIGHTMAGENTA);
     cout << "C : Cochon";
 
-    gotoxy(12+2*kLargM,3);
-    textcolor(LIGHTGRAY);
-    cout << "Sur la carte :";
 
-    gotoxy(13+2*kLargM,4);
-    cout << "- Homme :";
-    gotoxy(13+2*kLargM,5);
-    cout << "- Femme :";
+    // Texte des stats
+    textcolor(LIGHTGRAY);
+    gotoxy(12+2*kLargM,3);
+    cout << "Jour :";
+    gotoxy(12+2*kLargM,5);
+    cout << "Sur la carte :";
     gotoxy(13+2*kLargM,6);
-    cout << "- Enfant :";
+    cout << "- Homme :";
     gotoxy(13+2*kLargM,7);
-    cout << "- Cochon :";
+    cout << "- Femme :";
     gotoxy(13+2*kLargM,8);
+    cout << "- Enfant :";
+    gotoxy(13+2*kLargM,9);
+    cout << "- Cochon :";
+    gotoxy(13+2*kLargM,10);
     cout << "- Donut :";
 
 }
 
 void placerPosition(const Position _pos, const string _letter, int color) {
+    // Calcul de la position du curseur
     int x = 4 + _pos.getAbs() * 2;
     int y = 4 + (kLongM - _pos.getOrd());
 
+    // Ecriture de la lettre avec la couleur à afficher
     gotoxy(x,y);
     textcolor(color);
     cout << _letter;
@@ -195,6 +207,7 @@ void placerPosition(const Position _pos, const string _letter, int color) {
 }
 
 void placerElement(const Element *_ele) {
+    // Vérifie le type de l'élément passé pour ensuite le placer sur la map
     if (typeid(*_ele) == typeid(Homme)) {
         placerPosition(_ele->getPos(),"H", YELLOW);
     }
@@ -216,10 +229,12 @@ void placerElement(const Element *_ele) {
 }
 
 void supprimerPosition (const Position _pos) {
+    // Efface la case voulue sur la carte
     placerPosition(_pos, " ", LIGHTGRAY);
 }
 
 void effacerAllPos () {
+    // Efface toutes les positions posibles
     for (unsigned i=1 ; i<= kLongM ; i++) {
         for (unsigned j=1 ; j <= kLargM ; j++) {
             if ((j + i) % 2 == 0) {
@@ -230,36 +245,44 @@ void effacerAllPos () {
 }
 
 void refreshMap (Monde world) {
+    // Efface la map
     effacerAllPos();
+    // Parcours le vecteur du monde pour rafficher tout ce qu'il y a actuellement
     for (unsigned i=0 ; i< world.size() ; i++) {
         placerElement(world.at(i));
     }
 }
 
 void replacerCurs () {
+    // Positionnement du curseur en bas de k'application
     gotoxy(0, 9 + kLongM);
 }
 
 void refreshStats (Monde world) {
+    // Actualisation des statistiques
     textcolor(LIGHTGRAY);
-    gotoxy(23+2*kLargM,4);
+    gotoxy(19+2*kLargM,3);
+    cout << "      ";
+    gotoxy(19+2*kLargM,3);
+    cout << world.getNbJours();
+    gotoxy(23+2*kLargM,6);
     cout << "    ";
-    gotoxy(23+2*kLargM,4);
+    gotoxy(23+2*kLargM,6);
     cout << world.getNombre(typeid(Homme));
-    gotoxy(23+2*kLargM,5);
+    gotoxy(23+2*kLargM,7);
     cout << "    ";
-    gotoxy(23+2*kLargM,5);
+    gotoxy(23+2*kLargM,7);
     cout << world.getNombre(typeid(Femme));
-    gotoxy(24+2*kLargM,6);
+    gotoxy(24+2*kLargM,8);
     cout << "    ";
-    gotoxy(24+2*kLargM,6);
+    gotoxy(24+2*kLargM,8);
     cout << world.getNombre(typeid(Enfant));
-    gotoxy(24+2*kLargM,7);
+    gotoxy(24+2*kLargM,9);
     cout << "    ";
-    gotoxy(24+2*kLargM,7);
+    gotoxy(24+2*kLargM,9);
     cout << world.getNombre(typeid(Cochon));
-    gotoxy(23+2*kLargM,8);
+    gotoxy(23+2*kLargM,10);
     cout << "    ";
-    gotoxy(23+2*kLargM,8);
+    gotoxy(23+2*kLargM,10);
     cout << world.getNombre(typeid(Donut));
 }
