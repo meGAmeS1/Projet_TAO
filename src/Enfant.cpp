@@ -8,15 +8,14 @@
 #include "Enfant.h"
 using namespace std;
 
-Enfant::Enfant() {
-	// TODO Auto-generated constructor stub
+/** Constructeur par défaut **/
+Enfant::Enfant() {}
 
-}
+/** Constructeur paramétré **/
+Enfant::Enfant(const Position _pos, const string _n, Monde* _e, int _vit, int _a, int _edv, int _vis):
+    Humain(_pos, _n, _e, _vit, _a, _edv, _vis)
+{}
 
-Enfant::Enfant(const Position _pos, const string _n, Monde* _e, int _vit, int _a, int _edv, int _vis):Humain(_pos, _n, _e, _vit, _a, _edv, _vis){}
-
-
-Enfant::~Enfant() {
-	// TODO Auto-generated destructor stub
-}
+/** Destructeur **/
+Enfant::~Enfant() {}
 

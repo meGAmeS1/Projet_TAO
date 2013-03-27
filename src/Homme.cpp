@@ -14,17 +14,23 @@
 
 using namespace std;
 
-Homme::Homme() {
-	// TODO Auto-generated constructor stub
+/** Constructeur par défaut **/
+Homme::Homme() {}
 
-}
+/** Constructeur paramétré **/
+Homme::Homme(const Position _pos, const string _n, Monde* _e, int _vit, int _a, int _edv, int _vis):
+    Humain(_pos, _n, _e, _vit, _a, _edv, _vis)
+{}
 
-Homme::Homme(const Position _pos, const string _n, Monde* _e, int _vit, int _a, int _edv, int _vis):Humain(_pos, _n, _e, _vit, _a, _edv, _vis){}
+/** Destructeur **/
+Homme::~Homme() {}
 
-Homme::~Homme() {
-	// TODO Auto-generated destructor stub
-}
-
+/** Méthode recupDonut **/
+/** permet de récolter un élément Donut se trouvant sur une des cases adjacentes
+    utilise : - supprElementVect()
+              - seDeplacer()
+              - obtenirDirection()
+**/
 void Homme::recupDonut(const Position _posDonut){
     unsigned idDonut = this->getEarth()->getCarte().find(_posDonut)->second;
     //int qte = this->getEarth()->at(idCochon)->getQuantite();
@@ -33,6 +39,14 @@ void Homme::recupDonut(const Position _posDonut){
     this->seDeplacer(this->obtenirDirection(this->getPos(),_posDonut));
 }
 
+/** redéfinition de la méthode agir héritée **/
+/** permet de recolter un élément Donut s'il y en a un a proximité
+    ou de se déplacer aléatoirement dans le cas contraire
+    utilise : - chercher()
+              - recupDonut()
+              - seDeplacer()
+              - directRandom()
+**/
 void Homme::agir(){
     Position posDonut = this->chercher(typeid(Donut));
     if (posDonut!=Position(-1,-1)){
