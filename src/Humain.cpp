@@ -9,6 +9,7 @@
 #include "Monde.h"
 #include "Position.h"
 #include "typeinfo"
+#include <stdlib.h>     /* srand, rand */
 
 using namespace std;
 
@@ -69,23 +70,23 @@ Position Humain::chercher(const type_info & myType) {
 	int y = this->getPos().getOrd();
 
 	Position tabPos[6];
-	Position pos0, pos1, pos2, pos3, pos4, pos5;
 
-	pos0 = Position(x,y+2);
-	pos1 = Position(x+1,y+1);
-	pos2 = Position(x+1,y-1);
-	pos3 = Position(x,y-2);
-	pos4 = Position(x-1,y-1);
-	pos5 = Position(x-1,y+1);
-
-	tabPos[0] = pos0;
-	tabPos[1] = pos1;
-	tabPos[2] = pos2;
-	tabPos[3] = pos3;
-	tabPos[4] = pos4;
-	tabPos[5] = pos5;
+	tabPos[0] = Position(x,y+2);
+	tabPos[1] = Position(x+1,y+1);
+	tabPos[2] = Position(x+1,y-1);
+	tabPos[3] = Position(x,y-2);
+	tabPos[4] = Position(x-1,y-1);
+	tabPos[5] = Position(x-1,y+1);
 
 	int i;
+
+    for (i=0; i<5; i++) {
+        int r = i + (rand() % (6-i)); // Random remaining position.
+        Position temp = tabPos[i];
+        tabPos[i] = tabPos[r];
+        tabPos[r] = temp;
+    }
+
 
 	for(i=0;i<6;i++)
 	{
