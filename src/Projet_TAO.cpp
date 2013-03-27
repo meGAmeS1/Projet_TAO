@@ -21,6 +21,7 @@
 #include <iostream>
 #include <string>
 #include <conio.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ int main() {
 
 	int var;
 
-    afficherGrille();
+    afficherStructure();
 
 	//Boucle d'ajout d'hommes
 	for (var = 0; var < kNbHomme; var++) {
@@ -106,8 +107,10 @@ int main() {
   //monde.afficher();
     refreshMap(monde);
   //   Boucle d'essai pour le déplacement
-    for (var=0; var<iDejaFait;var++){
-        getch();
+    for (var=0; var<16;var++){
+        Sleep(500); // Sleep, ca s'exiprime en microsecond
+        replacerCurs();
+
         monde.at(var)->agir();
 
         refreshMap(monde);

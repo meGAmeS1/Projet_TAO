@@ -10,7 +10,7 @@
 #include "constants.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-
+#include <stdio.h>
 using namespace std;
 
 Monde::Monde() {
@@ -26,10 +26,10 @@ void Monde::afficher()
 cout<<"Vector : "<<endl;
 for (unsigned i=0 ; i< size() ; i++)
 at(i)->afficher();
-//cout<<"Map : "<<endl;
-//map<Position, unsigned>::const_iterator Iter;
-//for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
-//cout<<Iter->first<<" "<<Iter->second<<endl;
+cout<<"Map : "<<endl;
+map<Position, unsigned>::const_iterator Iter;
+for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
+cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 
 const map<Position, unsigned>& Monde::getCarte() const {
@@ -79,24 +79,11 @@ Position Monde::creerPos()
 	return pos;
 }
 
-void Monde::supprElementVect(Element * unEle)
+void Monde::supprElementVect(int pos)
 {
-//int pos = std::find(begin(), end(), * unEle);
-//    //this->erase(this->begin() + this->at(pos));
-//
-//    for (std::vector<Element*>::iterator it = this->begin(); it != this->end(); )
-//    {
-//        if (*it == unEle)
-//            it = this->erase(it);
-//        else
-//            ++it;
-//    }
-
-    for (unsigned i=0 ; i< size() ; i++)
-    {
-        if(this->at(i) == unEle)
-        {
-            this->assign(NULL, this->begin()+i);
-        }
+    this->erase(this->begin() + pos);
+    map<Position, unsigned>::iterator Iter;
+    for(Iter=getCarteEdit().begin(); Iter!=getCarteEdit().end() ; Iter++) {
+        if (Iter->second >= pos) Iter->second --;
     }
 }

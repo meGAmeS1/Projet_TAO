@@ -9,10 +9,20 @@
 #include "constants.h"
 #include <iostream>
 #include <typeinfo>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
-void afficherGrille() {
+void afficherStructure() {
+    int lines = 11 + kLongM;
+    int cols = 30 + 2*kLargM;
+    stringstream configCons;
+    configCons << "mode con LINES=" << lines << " COLS=" << cols;
+    string tmp = configCons.str();
+    system(tmp.c_str());
+
+    // Génération de la grille
     textcolor(GREEN);
     // affichage des abscisses
     gotoxy(5,1);
@@ -115,6 +125,63 @@ void afficherGrille() {
 
     // Passage à la couleur normale
     textcolor(LIGHTGRAY);
+
+    // Grille de l'application
+    gotoxy(10+2*kLargM,2);
+    for(int i = 60; i<80; i++) {
+        cout << "-";
+    }
+
+    for(int i = 3; i<6+kLongM; i++) {
+        gotoxy(10+2*kLargM,i);
+        cout << "|";
+    }
+
+    gotoxy(0,6+kLongM);
+    for(int i = 0; i<cols; i++) {
+        cout << "-";
+    }
+
+    gotoxy(0,8+kLongM);
+    for(int i = 0; i<cols; i++) {
+        cout << "-";
+    }
+
+    gotoxy(2,7+kLongM);
+    textcolor(YELLOW);
+    cout << "H : Homme";
+
+    gotoxy(14,7+kLongM);
+    textcolor(CYAN);
+    cout << "F : Femme";
+
+    gotoxy(26,7+kLongM);
+    textcolor(LIGHTCYAN);
+    cout << "E : Enfant";
+
+    gotoxy(39,7+kLongM);
+    textcolor(LIGHTGREEN);
+    cout << "D : Donut";
+
+    gotoxy(51,7+kLongM);
+    textcolor(LIGHTMAGENTA);
+    cout << "C : Cochon";
+
+    gotoxy(12+2*kLargM,3);
+    textcolor(LIGHTGRAY);
+    cout << "Sur la carte :";
+
+    gotoxy(13+2*kLargM,4);
+    cout << "- Homme :";
+    gotoxy(13+2*kLargM,5);
+    cout << "- Femme :";
+    gotoxy(13+2*kLargM,6);
+    cout << "- Enfant :";
+    gotoxy(13+2*kLargM,7);
+    cout << "- Cochon :";
+    gotoxy(13+2*kLargM,8);
+    cout << "- Donut :";
+
 }
 
 void placerPosition(const Position _pos, const string _letter, int color) {
@@ -167,4 +234,8 @@ void refreshMap (Monde world) {
     for (unsigned i=0 ; i< world.size() ; i++) {
         placerElement(world.at(i));
     }
+}
+
+void replacerCurs () {
+    gotoxy(0, 9 + kLongM);
 }
