@@ -11,6 +11,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <stdio.h>
+#include <typeinfo>
 using namespace std;
 
 Monde::Monde() {
@@ -86,4 +87,14 @@ void Monde::supprElementVect(int pos)
     for(Iter=getCarteEdit().begin(); Iter!=getCarteEdit().end() ; Iter++) {
         if (Iter->second >= pos) Iter->second --;
     }
+}
+
+int Monde::getNombre (const type_info & myType) {
+    int nb = 0;
+
+    for (unsigned i=0 ; i< this->size() ; i++) {
+        if (typeid (*(this->at(i))) == myType) nb++;
+    }
+
+    return nb;
 }

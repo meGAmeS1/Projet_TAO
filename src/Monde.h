@@ -29,7 +29,7 @@ public:
 	Position creerPos();
 	bool existPos(Position);
 	void supprElementVect(int);
-
+	int getNombre (const type_info &);
 private:
 	map <Position, unsigned> carte;
 };

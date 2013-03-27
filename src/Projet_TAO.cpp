@@ -117,6 +117,7 @@ int main() {
             monde.at(i)->agir();
 
             refreshMap(monde);
+            refreshStats(monde);
             i++;
         }
     }

@@ -13,6 +13,7 @@ void placerPosition(const Position _pos, const string _letter, int color);
 void placerElement(const Element *_ele);
 void supprimerPosition (const Position _pos);
 void effacerAllPos ();
-void refreshMap (Monde world);
+void refreshMap (Monde);
 void replacerCurs ();
+void refreshStats (Monde);
 #endif // AFFICHAGE_H

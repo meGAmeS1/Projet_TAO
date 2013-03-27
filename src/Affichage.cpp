@@ -239,3 +239,27 @@ void refreshMap (Monde world) {
 void replacerCurs () {
     gotoxy(0, 9 + kLongM);
 }
+
+void refreshStats (Monde world) {
+    textcolor(LIGHTGRAY);
+    gotoxy(23+2*kLargM,4);
+    cout << "    ";
+    gotoxy(23+2*kLargM,4);
+    cout << world.getNombre(typeid(Homme));
+    gotoxy(23+2*kLargM,5);
+    cout << "    ";
+    gotoxy(23+2*kLargM,5);
+    cout << world.getNombre(typeid(Femme));
+    gotoxy(24+2*kLargM,6);
+    cout << "    ";
+    gotoxy(24+2*kLargM,6);
+    cout << world.getNombre(typeid(Enfant));
+    gotoxy(24+2*kLargM,7);
+    cout << "    ";
+    gotoxy(24+2*kLargM,7);
+    cout << world.getNombre(typeid(Cochon));
+    gotoxy(23+2*kLargM,8);
+    cout << "    ";
+    gotoxy(23+2*kLargM,8);
+    cout << world.getNombre(typeid(Donut));
+}
