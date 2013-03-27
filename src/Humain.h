@@ -2,7 +2,7 @@
  * Humain.h
  *
  *  Created on: 11 mars 2013
- *      Author: quentin
+ *      Author: Quentin Maginot
  */
 
 #ifndef HUMAIN_H_
@@ -18,9 +18,9 @@ using namespace std;
 
 class Humain: public Mobile {
 private:
-	int age;
-	int esperanceDeVie;
-	int vision;
+	int age;    // l'age de l'humain
+	int esperanceDeVie;   // l'espérance de vie de l'humain
+	int vision;        // la vision de l'humain
 public:
 	Humain();
 	Humain(const Position, const string, Monde*, int, int, int, int);

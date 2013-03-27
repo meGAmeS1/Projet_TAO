@@ -111,7 +111,7 @@ int main() {
         int i=0;
 
         while (monde.at(i) != monde.back()) {
-            Sleep(50); // Sleep, ca s'exiprime en microsecond
+            Sleep(150); // Sleep, ca s'exiprime en microsecond
             replacerCurs();
 
             monde.at(i)->agir();
