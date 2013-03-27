@@ -9,6 +9,7 @@
 #include "Monde.h"
 #include "Position.h"
 #include "typeinfo"
+#include <stdlib.h>     /* srand, rand */
 
 using namespace std;
 
@@ -83,6 +84,13 @@ Position Humain::chercher(const type_info & myType) {
 	tabPos[5] = Position(x-1,y+1);
 
 	int i;
+
+    for (i=0; i<5; i++) {
+        int r = i + (rand() % (6-i)); // Random remaining position.
+        Position temp = tabPos[i];
+        tabPos[i] = tabPos[r];
+        tabPos[r] = temp;
+    }
 
     // on parcours la map aux alentours de l'humain en parcourant le tableau des différentes positions
 	for(i=0;i<6;i++){

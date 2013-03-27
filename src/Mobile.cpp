@@ -41,7 +41,7 @@ Mobile::~Mobile() {
 }
 
 void Mobile::agir(){
-	this->seDeplacer(SUDOUEST);
+	this->seDeplacer(directRandom());
 }
 
 bool Mobile::seDeplacer(Direction _dir){
@@ -133,5 +133,5 @@ Direction Mobile::obtenirDirection(const Position _depart ,const Position _arriv
 
 
 Direction Mobile::directRandom(){
-    Direction d = static_cast<Direction>(rand()%3);
+    Direction d = static_cast<Direction>(rand()%6);
 }
