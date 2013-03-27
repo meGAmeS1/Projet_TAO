@@ -78,3 +78,25 @@ Position Monde::creerPos()
 
 	return pos;
 }
+
+void Monde::supprElementVect(Element * unEle)
+{
+//int pos = std::find(begin(), end(), * unEle);
+//    //this->erase(this->begin() + this->at(pos));
+//
+//    for (std::vector<Element*>::iterator it = this->begin(); it != this->end(); )
+//    {
+//        if (*it == unEle)
+//            it = this->erase(it);
+//        else
+//            ++it;
+//    }
+
+    for (unsigned i=0 ; i< size() ; i++)
+    {
+        if(this->at(i) == unEle)
+        {
+            this->assign(NULL, this->begin()+i);
+        }
+    }
+}

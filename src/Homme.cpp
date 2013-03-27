@@ -29,6 +29,7 @@ void Homme::recupDonut(const Position _posDonut){
     unsigned idCochon = this->getEarth()->getCarte().find(_posDonut)->second;
     //int qte = this->getEarth()->at(idCochon)->getQuantite();
     this->getEarth()->getCarteEdit().erase(_posDonut);
+    this->getEarth()->supprElementVect(this->getEarth()->at(idCochon));
     this->seDeplacer(this->obtenirDirection(this->getPos(),_posDonut));
 }
 

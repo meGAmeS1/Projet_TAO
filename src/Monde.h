@@ -28,6 +28,7 @@ public:
 	map<Position, unsigned>& getCarteEdit();
 	Position creerPos();
 	bool existPos(Position);
+	void supprElementVect(Element *);
 
 private:
 	map <Position, unsigned> carte;
