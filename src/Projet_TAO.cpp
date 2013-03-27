@@ -107,13 +107,18 @@ int main() {
   //monde.afficher();
     refreshMap(monde);
   //   Boucle d'essai pour le déplacement
-    for (var=0; var<16;var++){
-        Sleep(500); // Sleep, ca s'exiprime en microsecond
-        replacerCurs();
+    while (monde.size() > 16) {
+        int i=0;
 
-        monde.at(var)->agir();
+        while (monde.at(i) != monde.back()) {
+            Sleep(50); // Sleep, ca s'exiprime en microsecond
+            replacerCurs();
 
-        refreshMap(monde);
+            monde.at(i)->agir();
+
+            refreshMap(monde);
+            i++;
+        }
     }
 
 //        Position pos = monde.creerPos();
