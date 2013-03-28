@@ -8,7 +8,7 @@
 #include "Mobile.h"
 #include "Monde.h"
 #include "constants.h"
-
+#include "Affichage.h"
 #include <stdlib.h>     /* srand, rand */
 
 
@@ -115,6 +115,8 @@ bool Mobile::seDeplacer(Direction _dir){
 	this->getEarth()->getCarteEdit().insert(pair <Position, unsigned> (posFuture, indice));
 
 
+    supprimerPosition(oldPos);
+    placerElement(this);
 	return true;
 }
 

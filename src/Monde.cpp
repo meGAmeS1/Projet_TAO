@@ -11,10 +11,11 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include <stdio.h>
+#include <typeinfo>
 using namespace std;
 
 Monde::Monde() {
-
+    this->nbJours = 0;
 }
 
 Monde::~Monde() {
@@ -23,13 +24,13 @@ Monde::~Monde() {
 
 void Monde::afficher()
 {
-cout<<"Vector : "<<endl;
-for (unsigned i=0 ; i< size() ; i++)
-at(i)->afficher();
-cout<<"Map : "<<endl;
-map<Position, unsigned>::const_iterator Iter;
-for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
-cout<<Iter->first<<" "<<Iter->second<<endl;
+    cout<<"Vector : "<<endl;
+    for (unsigned i=0 ; i< size() ; i++)
+    at(i)->afficher();
+    cout<<"Map : "<<endl;
+    map<Position, unsigned>::const_iterator Iter;
+    for(Iter=getCarte().begin(); Iter!=getCarte().end() ; Iter++)
+    cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 
 const map<Position, unsigned>& Monde::getCarte() const {
@@ -86,4 +87,22 @@ void Monde::supprElementVect(int pos)
     for(Iter=getCarteEdit().begin(); Iter!=getCarteEdit().end() ; Iter++) {
         if (Iter->second >= pos) Iter->second --;
     }
+}
+
+int Monde::getNombre (const type_info & myType) {
+    int nb = 0;
+
+    for (unsigned i=0 ; i< this->size() ; i++) {
+        if (typeid (*(this->at(i))) == myType) nb++;
+    }
+
+    return nb;
+}
+
+int Monde::getNbJours() {
+    return this->nbJours;
+}
+
+void Monde::addDay() {
+    this->nbJours++;
 }

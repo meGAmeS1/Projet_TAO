@@ -29,9 +29,12 @@ public:
 	Position creerPos();
 	bool existPos(Position);
 	void supprElementVect(int);
-
+	int getNombre (const type_info &);
+	int getNbJours();
+	void addDay();
 private:
 	map <Position, unsigned> carte;
+	int nbJours;
 };
 
 #endif /* MONDE_H_ */
