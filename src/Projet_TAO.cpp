@@ -41,7 +41,7 @@ int main() {
 		string nom = "Homer";
 		int vitesse = 1;
 		int age = 18;
-		int espDeVie = 50;
+		int espDeVie = 60;
 		int vision = 2;
 
 		Element * hom = new Homme(pos, nom, &monde, vitesse, age, espDeVie, vision);
@@ -59,7 +59,7 @@ int main() {
 		string nom = "Marge";
 		int vitesse = 1;
 		int age = 18;
-		int espDeVie = 50;
+		int espDeVie = 60;
 		int vision = 1;
 
 		Element * fem = new Femme(pos, nom, &monde, vitesse, age, espDeVie, vision);
@@ -108,7 +108,8 @@ int main() {
   //monde.afficher();
     refreshMap(monde); // Initialisation de l'affichage carte
   //   Boucle d'essai pour le déplacement
-    while (monde.getNombre(typeid(Homme)) > 0 || monde.getNombre(typeid(Femme)) > 0) {
+    // tant qu'il reste des hommes ou des femmes et des donuts ou des cochons
+    while ((monde.getNombre(typeid(Homme)) > 0 || monde.getNombre(typeid(Femme)) > 0) && (monde.getNombre(typeid(Cochon)) > 0 || monde.getNombre(typeid(Donut)) > 0)) {
         int i=0;
         monde.addDay(); // Passage à un nouveau jour
         while (monde.at(i) != monde.back()) {

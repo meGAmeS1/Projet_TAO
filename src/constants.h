@@ -10,8 +10,8 @@
 
 
 /*Monde*/
-const int kLargM = 26; // Largeur du monde - abscisse
-const int kLongM = 26; // Hauteur du monde - ordonnées
+const int kLargM = 20; // Largeur du monde - abscisse
+const int kLongM = 20; // Hauteur du monde - ordonnées
 
 /* Elements au démarage */
 const int kNbHomme = 0.7 * kLargM; // nombre d'homme dans le monde au démarrage de l'application
