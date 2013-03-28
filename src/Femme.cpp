@@ -28,10 +28,8 @@ Femme::~Femme() {}
               - obtenirDirection()
 **/
 void Femme::chasser(const Position _posCochon){
-    unsigned idCochon = this->getEarth()->getCarte().find(_posCochon)->second;
     //int qte = this->getEarth()->at(idCochon)->getQuantite();
-    this->getEarth()->getCarteEdit().erase(_posCochon);
-    this->getEarth()->supprElementVect(idCochon);
+    this->getEarth()->disparaitreDuMonde(_posCochon);
     this->seDeplacer(this->obtenirDirection(this->getPos(),_posCochon));
 }
 
@@ -50,5 +48,5 @@ void Femme::agir(){
     }else{
         seDeplacer(this->directRandom());
     }
-
+    this->vieillir();
 }

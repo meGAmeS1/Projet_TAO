@@ -32,10 +32,8 @@ Homme::~Homme() {}
               - obtenirDirection()
 **/
 void Homme::recupDonut(const Position _posDonut){
-    unsigned idDonut = this->getEarth()->getCarte().find(_posDonut)->second;
     //int qte = this->getEarth()->at(idCochon)->getQuantite();
-    this->getEarth()->getCarteEdit().erase(_posDonut);
-    this->getEarth()->supprElementVect(idDonut);
+    this->getEarth()->disparaitreDuMonde(_posDonut);
     this->seDeplacer(this->obtenirDirection(this->getPos(),_posDonut));
 }
 
@@ -54,4 +52,5 @@ void Homme::agir(){
     }else{
         seDeplacer(this->directRandom());
     }
+    this->vieillir();
 }

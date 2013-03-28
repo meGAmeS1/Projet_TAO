@@ -32,6 +32,7 @@ public:
 	int getVision() const;
 	void setVision(int vision);
 	Position chercher(const type_info &);
+	void vieillir();
 };
 
 #endif /* HUMAIN_H_ */

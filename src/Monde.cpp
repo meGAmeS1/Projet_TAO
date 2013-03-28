@@ -80,12 +80,19 @@ Position Monde::creerPos()
 	return pos;
 }
 
-void Monde::supprElementVect(int pos)
+void Monde::disparaitreDuMonde(Position _pos)
 {
-    this->erase(this->begin() + pos);
+    unsigned idEle = this->getCarte().find(_pos)->second;
+    // on supprime de la map
+    this->getCarteEdit().erase(_pos);
+
+    // on supprime du vecteur
+    this->erase(this->begin() + idEle);
+
+    // on met à jour la map
     map<Position, unsigned>::iterator Iter;
     for(Iter=getCarteEdit().begin(); Iter!=getCarteEdit().end() ; Iter++) {
-        if (Iter->second >= pos) Iter->second --;
+        if (Iter->second >= idEle) Iter->second --;
     }
 }
 

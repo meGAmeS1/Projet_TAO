@@ -28,7 +28,7 @@ public:
 	map<Position, unsigned>& getCarteEdit();
 	Position creerPos();
 	bool existPos(Position);
-	void supprElementVect(int);
+	void disparaitreDuMonde(Position);
 	int getNombre (const type_info &);
 	int getNbJours();
 	void addDay();

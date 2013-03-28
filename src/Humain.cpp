@@ -103,5 +103,15 @@ Position Humain::chercher(const type_info & myType) {
     return (Position(-1,-1)); // on retourne une position qui n'existe pas si on n'a pas trouvé d'élement unEle
 }
 
+/** Méthode vieillir **/
+/** Incrémente l'age de l'humain qui meure si il atteint son espérance de vie
+    Utilise : - mourir()
+**/
+void Humain::vieillir(){
+    this->setAge(this->getAge()+1);
+    if(this->getAge()>=this->getEsperanceDeVie())
+        this->getEarth()->disparaitreDuMonde(this->getPos());
+}
+
 Humain::~Humain() {}
 
