@@ -111,7 +111,7 @@ int main() {
         int i=0;
         monde.addDay(); // Passage à un nouveau jour
         while (monde.at(i) != monde.back()) {
-            Sleep(10); // Sleep Temps d'attente pour chaque refresh
+            Sleep(1); // Sleep Temps d'attente pour chaque refresh
 
             monde.at(i)->agir();
 
