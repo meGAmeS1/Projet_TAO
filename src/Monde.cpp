@@ -7,6 +7,7 @@
 
 #include "Monde.h"
 #include "Position.h"
+#include "Affichage.h"
 #include "constants.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
@@ -94,6 +95,8 @@ void Monde::disparaitreDuMonde(Position _pos)
     for(Iter=getCarteEdit().begin(); Iter!=getCarteEdit().end() ; Iter++) {
         if (Iter->second >= idEle) Iter->second --;
     }
+
+    supprimerPosition(_pos); // Supprime de l'affichage
 }
 
 int Monde::getNombre (const type_info & myType) {

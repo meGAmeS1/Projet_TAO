@@ -118,7 +118,7 @@ int main() {
             monde.at(i)->agir();
 
             refreshStats(monde); // Rafraichissement des stats
-            if (monde.size() == kNbFemme+kNbHomme) break;
+            if (monde.at(i) == monde.back()) break;
             i++;
         }
     }
