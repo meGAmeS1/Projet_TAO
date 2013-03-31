@@ -41,7 +41,7 @@ int main() {
 		string nom = "Homer";
 		int vitesse = 1;
 		int age = 18;
-		int espDeVie = 60;
+		int espDeVie = rand()%30+60;
 		int vision = 2;
 
 		Element * hom = new Homme(pos, nom, &monde, vitesse, age, espDeVie, vision);
@@ -59,7 +59,7 @@ int main() {
 		string nom = "Marge";
 		int vitesse = 1;
 		int age = 18;
-		int espDeVie = 60;
+		int espDeVie = rand()%30+60;
 		int vision = 1;
 
 		Element * fem = new Femme(pos, nom, &monde, vitesse, age, espDeVie, vision);
